@@ -4,7 +4,7 @@
 
 <script>
 module.exports = {
-    data : function() {
+    data() {
         return {
             message: "marche !",
         }
