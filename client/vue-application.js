@@ -17,5 +17,14 @@ var app = new Vue({
   router,
   el: '#app',
   data: {},
-  components: { Home, Login, Register}
+
+  methods: {
+    async register(newUser) {
+      await axios.post('/api/register', newUser);
+    },
+
+    async login(logs) {
+      await axios.post('/api/login', logs);
+    },
+  }
 })

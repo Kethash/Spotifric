@@ -39,9 +39,9 @@ router.post('/register', (req,res) => {
       return
     }
 
-
   }
 
+  register(username, password);
 })
 
 //Login
@@ -79,6 +79,7 @@ router.post('/login', (req, res) => {
     }
   }
 
+  checkValidity(username, password);
 })
 
 module.exports = router

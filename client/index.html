@@ -21,7 +21,9 @@
         </nav>
       </header>
       <main>
-        <router-view></router-view>
+        <router-view
+        @register-user="register"
+        @login-user="login"></router-view>
       </main>
     </div>
     <script src="/vue-application.js"></script>
