@@ -1,16 +1,7 @@
-const HelloOtherWorld = window.httpVueLoader('./components/HelloOtherWorld.vue')
-
-Vue.component('hello-world', {
-  data: function () {
-    return {
-      message: ', World'
-    }
-  },
-  template: `<p>Hello{{ message }}!</p>`
-})
+const MainApp = window.httpVueLoader('./components/MainApp.vue')
 
 var app = new Vue({
   el: '#app',
   data: { },
-  components: { HelloOtherWorld }
+  components: { MainApp }
 })
