@@ -15,7 +15,6 @@
         venez decouvrir plus de 10000 titres pour tous les gouts...
       </em>
     </div>
-
     <div class="venez" @click="rejoindre">Rejoignez Nous</div>
   </div>
 </template>
@@ -28,7 +27,8 @@ module.exports = {
 
   methods : {
     rejoindre() {
-      this.$router.push('MainApp')
+      this.$emit("rejoindre");
+      this.$router.push('/rejoindre');
     }
   }
 };
