@@ -16,7 +16,7 @@
       </em>
     </div>
 
-    <div class="venez">Rejoignez Nous</div>
+    <div class="venez" @click="rejoindre">Rejoignez Nous</div>
   </div>
 </template>
 
@@ -25,6 +25,12 @@ module.exports = {
   data() {
     return {};
   },
+
+  methods : {
+    rejoindre() {
+      this.$router.push('MainApp')
+    }
+  }
 };
 </script>
 
