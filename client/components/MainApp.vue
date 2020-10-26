@@ -7,7 +7,7 @@
           <img src="spotifyLogo.png" class="h-10" style="filter: brightness(0) invert(1);"/>
         </div>
         <div class="mx-2 ">
-          <button class="w-full rounded px-3 py-2 flex items-center justify-start"> </button>
+          <button class="w-full rounded px-3 py-2 flex items-center justify-start"> music </button>
           <button> </button>
           <button> </button>
       </div>
@@ -26,21 +26,12 @@
 
 <script>
 
-export default {
-  name:'App',
-  data: function() {
-    return {
-      pages: [
-        {id:'home', name:'Home', icon:'home'},
-        {id:'', name:'', icon:''},
-        {id:'', name:'', icon:''}
-      ]
-
-      };
-    },
-  methods: {
-
+module.exports = {
+ 
+  data() {
+    return {};
   }
+ 
 };
 </script>
 
