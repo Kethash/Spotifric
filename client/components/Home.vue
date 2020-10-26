@@ -1,17 +1,16 @@
 <template>
-  <div>Regarde comment ça {{ message }} </div>
+  <div>Regarde comment ça {{ message }}</div>
 </template>
 
 <script>
 module.exports = {
-    data() {
-        return {
-            message: "marche !",
-        }
-    }
-  }
+  data() {
+    return {
+      message: "marche !",
+    };
+  },
+};
 </script>
 
 <style>
-
 </style>
