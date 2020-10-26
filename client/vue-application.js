@@ -1,20 +1,16 @@
-const Home = window.httpVueLoader('./components/Home.vue')
+const MainApp = window.httpVueLoader('./components/MainApp.vue')
 const Login = window.httpVueLoader('./components/Login.vue')
 const Register = window.httpVueLoader('./components/Register.vue')
 
-const routes = [
-  { path : '/', component : Home },
+const Routes = [
+  { path : '/', component : MainApp },
   { path : '/login', component : Login },
   { path : '/register', component : Register },
 ]
 
-const router = new VueRouter({
-  routes
-})
 
 var app = new Vue({
-  router,
   el: '#app',
   data: {},
-  components: { Home, Login, Register }
+  components: { MainApp, Login }
 })
