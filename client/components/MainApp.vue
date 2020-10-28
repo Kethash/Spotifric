@@ -7,10 +7,13 @@
           <img src="" class="h-10" style="filter: brightness(0) invert(1);"/>
         </div>
         <div class="mx-2 ">
-          <button class="w-full rounded px-3 py-2 flex items-center justify-start"> music </button>
-          <button> </button>
-          <button> </button>
+          <button class="w-full rounded px-3 py-2 flex items-center justify-start"> music
+            <i class="material-icons mr-3"> {{ page.icon }} </i>
+            <p> {{ page.name }} </p>
+          </button>
       </div>
+      <div class="mx-5">
+        <h1 class="text-xs text-lightest tracking-widest uppercase"> playlists </h1>
       <!-- contenu principal du site -->
       <div class="w-full h-full relative"> 
         <!-- header -->
@@ -42,5 +45,10 @@ module.exports = {
 </script>
 
 <style>
+  @tailwind base;
+
+  @tailwind components;
+
+  @tailwind utilities;
 
 </style>
