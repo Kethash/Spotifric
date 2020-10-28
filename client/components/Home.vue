@@ -50,7 +50,7 @@ module.exports = {
 
 .hd {
   /*position: absolute;*/
-  color: #3A8A00;
+  color: #0C783A;
   top: 240px;
   left: 40px;
   font-size: 45px;
