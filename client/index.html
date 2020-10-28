@@ -16,7 +16,6 @@
                 <nav>
                     <router-link to="/">SPOTIFRIC</router-link>
                     <router-link to="/">Accueil</router-link>
-                    <router-link to="/login">Login</router-link>
                     <router-link to="/register">Register</router-link>
                 </nav>
             </div>
@@ -25,6 +24,7 @@
                 <router-view
                     @login-user="login"
                     @register-user="register"
+                    @rejoindre="rejoindre"
                 ></router-view>
             </div>
         </div>

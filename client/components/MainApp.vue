@@ -29,7 +29,7 @@
 
 <script>
 
-mmodule.exports = {
+module.exports = {
  
   data() {
     return {
