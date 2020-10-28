@@ -1,3 +1,5 @@
+
+
 module.exports = {
     theme: {
         fontfamily: "proxima Nova",
@@ -15,5 +17,7 @@ module.exports = {
         },
     },
     variants: {},
-    plugins: []
+    plugins: [
+        require('@tailwindcss/ui',)
+    ]
 };

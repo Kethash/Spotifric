@@ -29,7 +29,7 @@
 
 <script>
 
-module.exports = {
+mmodule.exports = {
  
   data() {
     return {
@@ -42,13 +42,9 @@ module.exports = {
   }
  
 };
+
 </script>
 
 <style>
-  @tailwind base;
-
-  @tailwind components;
-
-  @tailwind utilities;
 
 </style>
