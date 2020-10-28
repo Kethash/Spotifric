@@ -16,8 +16,6 @@
                 <nav>
                     <router-link to="/">SPOTIFRIC</router-link>
                     <router-link to="/">Accueil</router-link>
-                    Premium Download Listen
-                    
                     <router-link to="/login">Login</router-link>
                     <router-link to="/register">Register</router-link>
                 </nav>
@@ -34,6 +32,37 @@
     </body>
 
     <style>
-      
+
+        * {
+            min-width: 300px;
+            max-width: 1920px;
+        }
+        
+        nav {
+            background-color: black;
+            color: white;
+            margin: 0;
+            min-height: 50px;
+            font-size: 40px;
+            font-family: sans-serif;
+
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 40px;
+            font-family: sans-serif;
+
+            display: flex;
+            flex-shrink: 3;
+        }
+
+        body {
+            margin: 0;
+        }
     </style>
 </html>
