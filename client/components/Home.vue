@@ -16,19 +16,22 @@
       </em>
     </div>
     <div class="venez" @click="rejoindre">Rejoignez Nous</div>
+
+    <register-compo v-if="registering"></register-compo>
   </div>
 </template>
 
 <script>
 module.exports = {
   data() {
-    return {};
+    return {
+      registering: false,
+    };
   },
 
   methods : {
     rejoindre() {
-      this.$emit("rejoindre");
-      this.$router.push('/register');
+      this.registering = true;
     }
   }
 };
@@ -71,6 +74,7 @@ img {
   font-size: 25px;
   letter-spacing: 0.03em;
   margin-top: 5%;
+  font-family: sans-serif;
 }
 
 .venez {
@@ -86,10 +90,11 @@ img {
   transition: 0.5s;
   transition-property: background;
   color: #000000;
-  width: 135px;
+  width: 140px;
   text-align: center;
   background: #59EB8B;
   margin-top: 8%;
+  font-family: sans-serif;
 }
 
 .venez:hover {

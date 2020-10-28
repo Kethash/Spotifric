@@ -102,7 +102,6 @@ module.exports = {
     url(spy.jpg);
   background-position: center;
   background-size: cover;
-  position: absolute;
 }
 
 .form-box {

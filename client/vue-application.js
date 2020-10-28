@@ -9,6 +9,8 @@ const routes = [
   { path : '/rejoindre', component : MainApp }
 ]
 
+Vue.component('register-compo', Register);
+
 const router = new VueRouter({
   routes
 })
