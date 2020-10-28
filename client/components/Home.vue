@@ -38,6 +38,7 @@ module.exports = {
 
 .main{
   margin-left: 5%;
+  margin-right: 25%;
 }
 
 .Astronomia {
