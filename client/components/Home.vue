@@ -39,6 +39,7 @@ module.exports = {
 .main{
   margin-left: 5%;
   margin-right: 25%;
+  margin-top: 5%;
 }
 
 .Astronomia {
@@ -69,6 +70,7 @@ img {
   color: #ececec;
   font-size: 25px;
   letter-spacing: 0.03em;
+  margin-top: 5%;
 }
 
 .venez {
@@ -84,6 +86,9 @@ img {
   transition: 0.5s;
   transition-property: background;
   color: #00d4ff;
+  width: 135px;
+  text-align: center;
+  margin-top: 8%;
 }
 
 .venez:hover {
