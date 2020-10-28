@@ -119,7 +119,7 @@ module.exports = {
   width: 220px;
   margin: 35px auto;
   position: relative;
-  box-shadow: 0 0 20px 9px dark;
+  box-shadow: 0 0 20px 9px lightgreen;
   border-radius: 30px;
 }
 

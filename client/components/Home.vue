@@ -28,7 +28,7 @@ module.exports = {
   methods : {
     rejoindre() {
       this.$emit("rejoindre");
-      this.$router.push('/rejoindre');
+      this.$router.push('/register');
     }
   }
 };
