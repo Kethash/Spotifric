@@ -110,7 +110,7 @@ module.exports = {
   height: 480px;
   position: relative;
   margin: 6% auto;
-  background: #89deeb;
+  background: #75DEAA;
   padding: 5px;
   overflow: hidden;
 }
@@ -119,7 +119,7 @@ module.exports = {
   width: 220px;
   margin: 35px auto;
   position: relative;
-  box-shadow: 0 0 20px 9px lightblue;
+  box-shadow: 0 0 20px 9px dark;
   border-radius: 30px;
 }
 
@@ -138,7 +138,7 @@ module.exports = {
   position: absolute;
   width: 110px;
   height: 100%;
-  background: linear-gradient(to right, #5b80b1, #25b4cb);
+  background: linear-gradient(to right, #74A515, #9FEB0A);
   border-radius: 30px;
   transition: 0.5s;
 }
@@ -168,7 +168,7 @@ module.exports = {
   cursor: pointer;
   display: block;
   margin: auto;
-  background: linear-gradient(to right, #5b80b1, #25b4cb);
+  background: linear-gradient(to right, #74A515, #9FEB0A);
   border: 0;
   outline: none;
   border-radius: 30px;

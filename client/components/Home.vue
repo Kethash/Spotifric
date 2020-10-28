@@ -50,7 +50,7 @@ module.exports = {
 
 .hd {
   /*position: absolute;*/
-  color: #00d4ff;
+  color: #3A8A00;
   top: 240px;
   left: 40px;
   font-size: 45px;
@@ -81,18 +81,19 @@ img {
   padding: 15px 30px;
   font-weight: 600;
   font-size: 20px;
-  border: 1px solid lightgreen;
+  border: 5px solid #09D86F;
   border-radius: 25px;
   transition: 0.5s;
   transition-property: background;
-  color: #00d4ff;
+  color: #000000;
   width: 135px;
   text-align: center;
+  background: #59EB8B;
   margin-top: 8%;
 }
 
 .venez:hover {
-  background: #00d4ff;
-  color: #fff;
+  background: #2FDE86;
+  color: #E7E410;
 }
 </style>
