@@ -6,7 +6,7 @@
     </div>
     -->
 
-    <div class="hd">Ressentez la musique <i class="fas fa-music"></i></div>
+    <div class="hd">Ressentez la musique </div>
 
     <div class="content">
       <em>
@@ -37,7 +37,7 @@ module.exports = {
 };
 </script>
 
-<style>
+<style scoped>
 
 .main{
   margin-left: 5%;

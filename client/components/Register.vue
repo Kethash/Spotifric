@@ -88,7 +88,7 @@ module.exports = {
 };
 </script>
 
-<style>
+<style scoped>
 * {
   margin: 0;
   padding: 0;

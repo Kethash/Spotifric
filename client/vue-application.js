@@ -1,12 +1,14 @@
 const Home = window.httpVueLoader('./components/Home.vue')
 const Register = window.httpVueLoader('./components/Register.vue')
 const MainApp = window.httpVueLoader('./components/MainApp.vue')
+const Abonnement = window.httpVueLoader('./components/Abonnement.vue')
 
 
 const routes = [
   { path : '/', component : Home },
   { path : '/register', component : Register },
-  { path : '/rejoindre', component : MainApp }
+  { path : '/rejoindre', component : MainApp },
+  { path : '/abonnement', component : Abonnement },
 ]
 
 Vue.component('register-compo', Register);
