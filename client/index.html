@@ -9,24 +9,26 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/http-vue-loader/src/httpVueLoader.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     
     </head>
     <body>
         <div id="app">
-            <div>
+            <header>
                 <nav>
                     <img class="image" src="components/spotify.jpg"/>
-                    <router-link to="/">SPOTIFRIC</router-link>
-                    <router-link to="/abonnement">Abonnements </router-link>
+                    <router-link to='/'>SPOTIFRIC</router-link>
+                    <router-link to='/abonnement'>Abonnements </router-link>
                 </nav>
-            </div>
+            </header>
 
-            <div>
+            <main>
                 <router-view
+                    :isLogged="isLogged"
                     @login-user="login"
                     @register-user="register"
                 ></router-view>
-            </div>
+            </main>
         </div>
         <script src="/vue-application.js"></script>
     </body>
