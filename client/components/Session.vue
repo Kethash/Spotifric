@@ -4,6 +4,7 @@
           <div class="sidebar-wrapper">
 
               <div class="sidebar__logo">
+                  <img src="components/spotify.jpg"
               
               </div>
 
@@ -15,11 +16,6 @@
 
           </div>
       </div>
-        
-
-
-
-      </aside>
   </div>
 </template>
 
@@ -62,6 +58,21 @@ html, body{
     background-color: black;
     overflow-x: hidden;
 
+
+}
+
+.sidebar-wrapper{
+    padding-bottom: 200px;
+}
+
+.sidebar__menu{
+    margin: 20px 0;
+    color: rgb(190, 190, 190);
+}
+
+.sidebar__logo img{
+    max-width: 250px;
+    width: 100%;
 }
 
 </style>
