@@ -102,7 +102,7 @@ router.get('/me', (req, res) => {
 
   async function whoAmI(userId) {
     const checkUser = await client.query({
-      text: "SELECT email FROM users WHERE id=$1 LIMIT 1",
+      text: "SELECT username FROM users WHERE id=$1 LIMIT 1",
       values: [userId],
     })
 
@@ -111,9 +111,9 @@ router.get('/me', (req, res) => {
       return
     }
     else {
-      const Username = checkUser.rows[0].email;
+      const Username = checkUser.rows[0].username;
       req.session.username = Username;
-      res.status(200).json(Username);
+      res.status(200).json({ message : `Vous êtes : ${Username}`});
       return
     }
 
