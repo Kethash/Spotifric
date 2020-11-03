@@ -122,5 +122,19 @@ router.get('/me', (req, res) => {
   whoAmI(userId);
 })
 
+router.delete('/logout', (req, res) => {
+
+  if(req.session.userId) {
+    req.session.destroy();
+
+    res.status(200).json({ message: 'User logged out successfully !'});
+  } else {
+    res.status(404).json({ message: 'Vous n\'êtes pas connecté ! '});
+  }
+  
+
+  return;
+
+})
 
 module.exports = router

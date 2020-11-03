@@ -3,6 +3,7 @@ const MainApp = window.httpVueLoader('./components/MainApp.vue')
 const Abonnement = window.httpVueLoader('./components/Abonnement.vue')
 const Session = window.httpVueLoader('./components/Session.vue')
 const Newcomer = window.httpVueLoader('./components/Newcomer.vue')
+const Profil = window.httpVueLoader('./components/Profil.vue')
 
 
 const routes = [
@@ -11,6 +12,7 @@ const routes = [
   { path : '/abonnement', component : Abonnement },
   { path : '/session', component : Session },
   { path : '/newcomer', component : Newcomer },
+  { path : '/profil', component : Profil },
 ]
 
 const router = new VueRouter({
@@ -34,9 +36,15 @@ var app = new Vue({
     async login(logs) {
       await axios.post('/api/login', logs);
       const res = await axios.get('/api/me');
-      if(res) { this.isLogged = true; }
+      if(res) { this.isLogged = true; } else {
+        this.isLogged = false;
+      }
       
 
+    },
+
+    async logout() {
+      await axios.delete('/api/logout');
     },
   }
 })

@@ -58,6 +58,10 @@
 
 <script>
 module.exports = {
+  props: {
+        isLogged: { type: Boolean }
+  },
+  
   data() {
     return {
       newUser: {

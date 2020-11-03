@@ -21,6 +21,8 @@
                     <router-link to='/abonnement'>Abonnements </router-link>
                     <router-link to='/session'> Debug </router-link>
                     <router-link to='/newcomer'> DebugNewcomer </router-link>
+                    <router-link to='/profil'> Profil </router-link>
+                    <div v-if="isLogged" @click="logout"> Déconnexion </div>
                 </nav>
             </header>
 
@@ -72,5 +74,6 @@
         .image{
             height: 45px;
         }
+
     </style>
 </html>
