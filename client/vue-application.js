@@ -10,7 +10,7 @@ const routes = [
   { path : '/rejoindre', component : MainApp },
   { path : '/abonnement', component : Abonnement },
   { path : '/session', component : Session },
-  { path: '/newcomer', component : Newcomer},
+  { path : '/newcomer', component : Newcomer },
 ]
 
 const router = new VueRouter({
