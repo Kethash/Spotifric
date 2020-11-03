@@ -107,7 +107,7 @@ module.exports = {
   height: 480px;
   position: relative;
   margin: 6% auto;
-  background: #75DEAA;
+  background: #fff;
   padding: 5px;
   overflow: hidden;
 }
