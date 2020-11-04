@@ -24,7 +24,19 @@ var app = new Vue({
   router,
   el: '#app',
   data: {
-    isLogged: false,
+    islogged: false,
+    user : {
+      username: "",
+      email: "",
+    }
+  },
+
+  async mounted() {
+    const res = await axios.get('/api/me');
+    if(res) {
+      this.user.username = res.data.username;
+      this.user.email = res.data.email;
+    }
   },
 
   methods: {
@@ -36,15 +48,24 @@ var app = new Vue({
     async login(logs) {
       await axios.post('/api/login', logs);
       const res = await axios.get('/api/me');
-      if(res) { this.isLogged = true; } else {
-        this.isLogged = false;
+      console.log(res);
+      if(res) { this.islogged = true; } else {
+        this.islogged = false;
       }
+
+      this.user.username = res.data.username;
+      this.user.email = res.data.email;
       
 
     },
 
     async logout() {
-      await axios.delete('/api/logout');
+      try {
+        await axios.delete('/api/logout');
+      } catch(err) {
+        console.log(err);
+      }
+      
     },
   }
 })

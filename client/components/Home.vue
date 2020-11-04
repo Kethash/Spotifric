@@ -83,7 +83,7 @@
 <script>
 module.exports = {
   props: {
-        isLogged: { type: Boolean }
+        islogged: { type: Boolean }
   },
 
   data() {

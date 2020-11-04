@@ -22,15 +22,16 @@
                     <router-link to='/session'> Debug </router-link>
                     <router-link to='/newcomer'> DebugNewcomer </router-link>
                     <router-link to='/profil'> Profil </router-link>
-                    <div v-if="isLogged" @click="logout"> Déconnexion </div>
                 </nav>
             </header>
 
             <main>
                 <router-view
-                    :isLogged="isLogged"
+                    :islogged="islogged"
+                    :user="user"
                     @login-user="login"
                     @register-user="register"
+                    @logout="logout"
                 ></router-view>
             </main>
         </div>
