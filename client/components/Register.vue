@@ -3,10 +3,10 @@
     <div class="form-box">
       <div class="button-box">
         <div id="btn"></div>
-        <button type="button" class="toggle-btn" onclick="login()">
+        <button type="button" class="toggle-btn" @click="login()">
           connecter
         </button>
-        <button type="button" class="toggle-btn" onclick="register()">
+        <button type="button" class="toggle-btn" @click="register()">
           s'enregister
         </button>
       </div>
