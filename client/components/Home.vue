@@ -44,9 +44,15 @@
             v-model="logs.password"
             required
           />
-          <input type="checkbox" class="chech-box" />
-          <span> se souvenir du mot de passe </span>
+          <div>
+            <input type="checkbox" class="chech-box" />
+            <span> se souvenir du mot de passe </span>
+            
+          </div>
+
           <button type="submit" class="continuer-btn">connecter</button>
+          
+          
         </form>
 
         <form id="register" class="input-group" @submit.prevent="try_register">
@@ -113,14 +119,14 @@ module.exports = {
       var y = document.getElementById("register");
       var z = document.getElementById("btn");
       x.style.left = "-400px";
-      y.style.left = "50px";
+      y.style.left = "75px";
       z.style.left = "110px";
     },
     login_btn() {
       var x = document.getElementById("login");
       var y = document.getElementById("register");
       var z = document.getElementById("btn");
-      x.style.left = "50px";
+      x.style.left = "75px";
       y.style.left = "450px";
       z.style.left = "0px";
     },
@@ -213,17 +219,20 @@ img {
 .hero {
   height: 100%;
   width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   background-position: center;
   background-size: cover;
+  position: absolute;
 }
 
 .form-box {
-  width: 380px;
-  height: 480px;
+  width: 430px;
+  height: 650px;
   position: relative;
-  margin: 6% auto;
-  background: #75DEAA;
+  margin: 15% auto;
+  background: white;
   padding: 5px;
+  border-radius: 50px;
   overflow: hidden;
 }
 
@@ -231,17 +240,18 @@ img {
   width: 220px;
   margin: 35px auto;
   position: relative;
-  box-shadow: 0 0 20px 9px lightgreen;
+  box-shadow: 0 0 20px 5px #f1c215;
   border-radius: 30px;
 }
 
 .toggle-btn {
-  padding: 10px 20px;
+  padding: 20px 20px;
   cursor: pointer;
   background: transparent;
   border: 0;
   outline: none;
   position: relative;
+  text-align: center;
 }
 
 #btn {
@@ -250,25 +260,26 @@ img {
   position: absolute;
   width: 110px;
   height: 100%;
-  background: linear-gradient(to right, #74A515, #9FEB0A);
+  background: linear-gradient(to right, #bfbd09, #eeec1a);
   border-radius: 30px;
-  transition: 0.5s;
+  transition: 0.15s;
 }
 
 .input-group {
   top: 180px;
   position: absolute;
   width: 280px;
+  transition: 0.5s;
 }
 
 .input-field {
   width: 100%;
   padding: 10px 0;
-  margin: 5px 0;
+  margin: 30px 0;
   border-left: 0;
   border-right: 0;
   border-top: 0;
-  border-bottom: 1px solid #999;
+  border-bottom: 1px ridge #f3d050;
   outline: none;
   background: transparent;
 }
@@ -279,7 +290,7 @@ img {
   cursor: pointer;
   display: block;
   margin: auto;
-  background: linear-gradient(to right, #74A515, #9FEB0A);
+  background: linear-gradient(to right, #bfbd09, #eeec1a);
   border: 0;
   outline: none;
   border-radius: 30px;
@@ -293,17 +304,25 @@ span {
   color: #777;
   font-size: 12px;
   bottom: 68px;
-  position: absolute;
 }
 
 #login {
-  left: 50px;
-  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  left: 75px;
+  justify-content: space-around;
+  height: 60%;
+}
+
+#login div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
 }
 
 #register {
   left: 450px;
-  transition: 0.5s;
 }
 
 </style>
