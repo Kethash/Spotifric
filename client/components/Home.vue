@@ -1,24 +1,27 @@
 <template>
-  <div class="main">
-    <!--
+  <div>
+    <div class="main">
+      <!--
     <div class="Astronomia">
       <img src="coffin_dance.jpg" alt="" />
     </div>
     -->
 
-    <div class="hd">Ressentez la musique</div>
+      <div class="hd">Ressentez la musique</div>
 
-    <div class="content">
-      <em>
-        Le seul et unique endroit ou vous pouvez <br />
-        vous plonger dans un monde rempli de musiques <br />
-        venez decouvrir plus de 10000 titres pour tous les gouts...
-      </em>
+      <div class="content">
+        <em>
+          Le seul et unique endroit ou vous pouvez <br />
+          vous plonger dans un monde rempli de musiques <br />
+          venez decouvrir plus de 10000 titres pour tous les gouts...
+        </em>
+      </div>
+      <div class="venez" @click="rejoindre">Rejoignez Nous</div>
     </div>
-    <div class="venez" @click="rejoindre">Rejoignez Nous</div>
 
     <div class="hero" v-if="registering">
       <div class="form-box">
+        <div id="close" @click="rejoindre"></div>
         <div class="button-box">
           <div id="btn"></div>
           <button type="button" class="toggle-btn" @click="login_btn">
@@ -47,12 +50,9 @@
           <div>
             <input type="checkbox" class="chech-box" />
             <span> se souvenir du mot de passe </span>
-            
           </div>
 
           <button type="submit" class="continuer-btn">connecter</button>
-          
-          
         </form>
 
         <form id="register" class="input-group" @submit.prevent="try_register">
@@ -77,8 +77,11 @@
             v-model="newUser.password"
             required
           />
-          <input type="checkbox" class="chech-box" required />
-          <span> j'accèpte les termes et conditions </span>
+          <div>
+            <input type="checkbox" class="chech-box" required />
+            <span> J'accepte les termes et conditions </span>
+          </div>
+          
           <button type="submit" class="continuer-btn">créer un compte</button>
         </form>
       </div>
@@ -89,7 +92,7 @@
 <script>
 module.exports = {
   props: {
-        islogged: { type: Boolean }
+    islogged: { type: Boolean },
   },
 
   data() {
@@ -99,7 +102,7 @@ module.exports = {
       newUser: {
         username: "",
         password: "",
-        email:"",
+        email: "",
       },
 
       logs: {
@@ -138,14 +141,11 @@ module.exports = {
     try_register() {
       this.$emit("register-user", this.newUser);
     },
-
   },
 };
 </script>
 
 <style scoped>
-
-
 
 .main {
   margin-left: 5%;
@@ -217,12 +217,13 @@ img {
 }
 
 .hero {
+  top: 0;
   height: 100%;
   width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   background-position: center;
   background-size: cover;
-  position: absolute;
+  position: fixed;
 }
 
 .form-box {
@@ -265,6 +266,22 @@ img {
   transition: 0.15s;
 }
 
+#close {
+  margin-left: 40px;
+  margin-top: 20px;
+  position: absolute;
+  font-size: 20px;
+  border: gray solid 0.2px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-image: url('../ressources/images/cross.png');
+}
+
+#close:hover {
+  cursor: pointer;
+}
+
 .input-group {
   top: 180px;
   position: absolute;
@@ -304,6 +321,9 @@ span {
   color: #777;
   font-size: 12px;
   bottom: 68px;
+  height: 50%;
+  display: flex;
+  align-items: center;
 }
 
 #login {
@@ -325,4 +345,10 @@ span {
   left: 450px;
 }
 
+#register div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
 </style>

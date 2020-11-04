@@ -47,6 +47,8 @@ module.exports = {
   methods: {
     logout() {
       this.$emit("logout");
+      this.userData.username = null;
+      this.userData.email = null;
       this.$router.push('/');
     },
   },
