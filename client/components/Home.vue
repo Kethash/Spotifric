@@ -44,9 +44,15 @@
             v-model="logs.password"
             required
           />
-          <input type="checkbox" class="chech-box" />
-          <span> se souvenir du mot de passe </span>
+          <div>
+            <input type="checkbox" class="chech-box" />
+            <span> se souvenir du mot de passe </span>
+            
+          </div>
+
           <button type="submit" class="continuer-btn">connecter</button>
+          
+          
         </form>
 
         <form id="register" class="input-group" @submit.prevent="try_register">
@@ -113,14 +119,14 @@ module.exports = {
       var y = document.getElementById("register");
       var z = document.getElementById("btn");
       x.style.left = "-400px";
-      y.style.left = "50px";
+      y.style.left = "75px";
       z.style.left = "110px";
     },
     login_btn() {
       var x = document.getElementById("login");
       var y = document.getElementById("register");
       var z = document.getElementById("btn");
-      x.style.left = "50px";
+      x.style.left = "75px";
       y.style.left = "450px";
       z.style.left = "0px";
     },
@@ -221,7 +227,7 @@ img {
 
 .form-box {
   width: 430px;
-  height: 665px;
+  height: 650px;
   position: relative;
   margin: 15% auto;
   background: white;
@@ -298,11 +304,21 @@ span {
   color: #777;
   font-size: 12px;
   bottom: 68px;
-  position: absolute;
 }
 
 #login {
-  left: 50px;
+  display: flex;
+  flex-direction: column;
+  left: 75px;
+  justify-content: space-around;
+  height: 60%;
+}
+
+#login div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
 }
 
 #register {
