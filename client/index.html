@@ -21,7 +21,7 @@
                     <router-link to='/abonnement'>Abonnements </router-link>
                     <router-link to='/session'> Debug </router-link>
                     <router-link to='/newcomer'> DebugNewcomer </router-link>
-                    <router-link to='/profil'> Profil </router-link>
+                    <router-link to='/profil' v-if="islogged"> Profil </router-link>
                 </nav>
             </header>
 

@@ -62,6 +62,9 @@ var app = new Vue({
     async logout() {
       try {
         await axios.delete('/api/logout');
+        this.user.username = null;
+        this.user.email = null;
+        this.islogged = false;
       } catch(err) {
         console.log(err);
       }
