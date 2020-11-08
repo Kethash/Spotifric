@@ -36,7 +36,9 @@ var app = new Vue({
     if(res) {
       this.user.username = res.data.username;
       this.user.email = res.data.email;
+      this.islogged = true;
     }
+    
   },
 
   methods: {
