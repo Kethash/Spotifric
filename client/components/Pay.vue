@@ -116,6 +116,7 @@ body {
   padding: 25px;
   margin: 25px auto 0;
   box-shadow: 0px 0px 20px;
+  border-radius: 40px;
 }
 .wrapper h2 {
   background-color: #fcfcfc;
@@ -124,11 +125,11 @@ body {
   padding: 10px;
   margin-bottom: 20px;
   text-align: center;
-  border: 1px dotted #333;
+  border: 1px solid green;
 }
 
 h4 {
-  padding-bottom: 5px;
+  padding-bottom: 8px;
   color: #7ed321;
 }
 
@@ -138,12 +139,12 @@ h4 {
   position: relative;
   display: flex;
   flex-direction: row;
-  padding: 5px 0;
+  padding: 7px 0;
 }
 
 .input-box {
   width: 100%;
-  margin-right: 12px;
+  margin-right: 10px;
   position: relative;
 }
 
@@ -155,10 +156,10 @@ h4 {
   padding: 14px 10px 14px 50px;
   width: 100%;
   background-color: #fcfcfc;
-  border: 1px solid #00000033;
+  border: 1px groove #00000033;
   outline: none;
   letter-spacing: 1px;
-  transition: 0.3s;
+  transition: 0.5s;
   border-radius: 3px;
   color: #333;
 }
