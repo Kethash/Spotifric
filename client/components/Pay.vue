@@ -99,6 +99,7 @@
 </template>
 
 <style scoped>
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
 * {
   margin: 0;
   padding: 0;
