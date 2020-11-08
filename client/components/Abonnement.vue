@@ -22,7 +22,7 @@
       <div class="pricing__plan__actions">
         <p class="pricing__plan__cost">250 €</p>
         <p class="pricing__plan__text">Par mois</p>
-        <a href="./" class="pricing__plan__button"> Acheter ce pack </a>
+        <router-link to='/pay' class="pricing__plan__button"> Acheter ce pack </router-link>
         <p class="princing__plan__text">Soit 3000€ par ans au minimum</p>
       </div>
     </section>
@@ -49,7 +49,7 @@
       <div class="pricing__plan__actions">
         <p class="pricing__plan__cost">1000 €</p>
         <p class="pricing__plan__text">Par mois</p>
-        <a href="./" class="pricing__plan__button"> Acheter ce pack </a>
+        <router-link to='/pay' class="pricing__plan__button"> Acheter ce pack </router-link>
         <p class="princing__plan__text">Soit 12000€ par ans au minimum</p>
       </div>
     </section>
@@ -76,7 +76,7 @@
       <div class="pricing__plan__actions">
         <p class="pricing__plan__cost">500 €</p>
         <p class="pricing__plan__text">Par mois</p>
-        <a href="./" class="pricing__plan__button"> Acheter ce pack </a>
+        <router-link to="/pay" class="pricing__plan__button"> Acheter ce pack </router-link>
         <p class="princing__plan__text">Soit 6000€ par ans au minimum</p>
       </div>
     </section>

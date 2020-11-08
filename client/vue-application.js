@@ -4,7 +4,8 @@ const Abonnement = window.httpVueLoader('./components/Abonnement.vue')
 const Session = window.httpVueLoader('./components/Session.vue')
 const Newcomer = window.httpVueLoader('./components/Newcomer.vue')
 const Profil = window.httpVueLoader('./components/Profil.vue')
-
+const Ket = window.httpVueLoader('./components/ket.vue')
+const Pay = window.httpVueLoader('./components/Pay.vue')
 
 const routes = [
   { path : '/', component : Home },
@@ -13,6 +14,8 @@ const routes = [
   { path : '/session', component : Session },
   { path : '/newcomer', component : Newcomer },
   { path : '/profil', component : Profil },
+  { path : '/ket', component: Ket },
+  { path : '/pay', component: Pay },
 ]
 
 const router = new VueRouter({
@@ -28,7 +31,9 @@ var app = new Vue({
     user : {
       username: "",
       email: "",
-    }
+    },
+
+    logged_out : false,
   },
 
   async mounted() {
@@ -52,13 +57,12 @@ var app = new Vue({
       const res = await axios.get('/api/me');
       console.log(res);
       if(res) { this.islogged = true; } else {
+        this.logged_out = false;
         this.islogged = false;
       }
-
       this.user.username = res.data.username;
       this.user.email = res.data.email;
-      
-
+    
     },
 
     async logout() {
@@ -67,10 +71,16 @@ var app = new Vue({
         this.user.username = null;
         this.user.email = null;
         this.islogged = false;
+        this.logged_out = true;
+
+        setTimeout(() => {
+          this.logged_out = false;
+        }, 1000)
+
       } catch(err) {
         console.log(err);
       }
       
     },
-  }
+  },
 })
