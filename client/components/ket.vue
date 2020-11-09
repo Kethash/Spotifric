@@ -5,7 +5,7 @@
         <nav class="sidebar">
           <h1>Playlists</h1>
           <div v-for="playlist in this.playlists" :key="playlist.titre">
-            <div class="list">{{ playlist.titre }}</div>
+            <div class="list">{{ playlist.titre }} </div>
           </div>
         </nav>
 
@@ -18,7 +18,12 @@
           >
             <div>
               {{ box.title }}
+              
             </div>
+            <div>
+              
+            </div>
+            <img :src="box.image"/>
           </div>
         </nav>
       </div>
@@ -122,9 +127,10 @@ module.exports = {
           title: "Random",
           music:
             "http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3",
+          image: "",
         },
-        { title: "Random 2", music: "http://soundbible.com/grab.php?id=915&type=mp3" },
-        { title: "Rest", music: './components/mp3/Pheeno_Rest.mp3' },
+        { title: "Random 2", music: "http://soundbible.com/grab.php?id=915&type=mp3", image: "", },
+        { title: "Rest", music: './components/mp3/Pheeno_Rest.mp3', image: "https://www.pokepedia.fr/images/thumb/c/cd/Rondoudou-RFVF.png/250px-Rondoudou-RFVF.png", },
       ],
 
       nowPlaying: null,
@@ -136,6 +142,10 @@ module.exports = {
     play(audio) {
       var single = new Audio(audio);
       single.play();
+
+      if(this.nowPlaying) {
+        this.nowPlaying.pause();
+      }
 
       this.nowPlaying = single;
       this.playing = true;
@@ -238,6 +248,12 @@ module.exports = {
   margin-top: 25px;
   margin-bottom: 25px;
   border-radius: 20px;
+}
+
+.musicbox img {
+  max-width: 100px;
+  max-height: 100px;
+  margin-top: 10%;
 }
 
 .musicbox:hover {
