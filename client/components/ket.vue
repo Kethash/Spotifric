@@ -10,7 +10,7 @@
         </nav>
 
         <nav class="display_list">
-            <div class="musicbox" v-for="box in this.current_list" :key="box">
+            <div @click="play(box.music)" class="musicbox" v-for="box in this.current_list" :key="box">
                 <div>
                     {{ box.title }}
                 </div>
@@ -96,38 +96,21 @@ module.exports = {
       ],
 
       current_list : [
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
-          {title: "Titre"},
+          {title: "Titre", music: "http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3"},
+          {title: "Titre", music: ""},
+          {title: "Titre", music: ""},
 
     ],
 
     };
   },
 
-  methods: {},
+  methods: {
+      play(audio) {
+          var single = new Audio(audio);
+          single.play()
+      }
+  },
 };
 </script>
 
@@ -219,6 +202,11 @@ module.exports = {
     text-align: center;
     margin-top: 25px;
     margin-bottom: 25px;
+    border-radius: 20px;
+}
+
+.musicbox:hover {
+    border: 1px solid lightgreen;
 }
 
 
