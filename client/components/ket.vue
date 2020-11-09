@@ -5,8 +5,18 @@
         <nav class="sidebar">
           <h1>Playlists</h1>
           <div v-for="playlist in this.playlists" :key="playlist.titre">
-            <div class="list">{{ playlist.titre }} </div>
+            <div class="list" @click="change_list(playlist)">
+              {{ playlist.titre }}
+            </div>
           </div>
+
+          <form @submit.prevent="postMusic()" enctype="multipart/form-data" >
+
+            
+            <input id="ajout" type="file" ref="file" @change="ajouterMusique" hidden/>
+            <label id="ajout" for="ajout">Ajouter musique</label>
+
+          </form>
         </nav>
 
         <nav class="display_list">
@@ -18,12 +28,8 @@
           >
             <div>
               {{ box.title }}
-              
             </div>
-            <div>
-              
-            </div>
-            <img :src="box.image"/>
+            <img :src="box.image" />
           </div>
         </nav>
       </div>
@@ -114,36 +120,43 @@
 </template>
 
 <script>
+
 module.exports = {
+  props: {
+    islogged: { type: Boolean },
+    user: { type: Object },
+    playlists: { type: Array },
+  },
+
   data() {
     return {
-      playlists: [
-        { titre: "Playlist 1", contenu: null },
-        { titre: "Playlist 2", contenu: null },
-      ],
+      play_list: [],
 
-      current_list: [
-        {
-          title: "Random",
-          music:
-            "http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3",
-          image: "",
-        },
-        { title: "Random 2", music: "http://soundbible.com/grab.php?id=915&type=mp3", image: "", },
-        { title: "Rest", music: './components/mp3/Pheeno_Rest.mp3', image: "https://www.pokepedia.fr/images/thumb/c/cd/Rondoudou-RFVF.png/250px-Rondoudou-RFVF.png", },
-      ],
+      current_list: [],
 
       nowPlaying: null,
       playing: false,
+
+      file: "",
+
+      show : false,
     };
+  },
+
+  async mounted() {
+    this.play_list = this.playlist;
   },
 
   methods: {
     play(audio) {
-      var single = new Audio(audio);
-      single.play();
+      if (audio.includes("youtube") || audio.includes("youtu.be")) {
 
-      if(this.nowPlaying) {
+      } else {
+        var single = new Audio(audio);
+        single.play();
+      }
+
+      if (this.nowPlaying) {
         this.nowPlaying.pause();
       }
 
@@ -160,6 +173,22 @@ module.exports = {
       this.nowPlaying.play();
       this.playing = true;
     },
+
+    change_list(playlist) {
+      this.current_list = playlist.contenu;
+    },
+
+    ajouterMusique() {
+      this.file = this.$refs.file.files[0];
+    },
+
+    async postMusic() {
+      const formData = newFormData();
+      formData.append('file', this.file);
+
+
+      await axios.post('/upload', formData);
+    }
   },
 };
 </script>
@@ -227,6 +256,23 @@ module.exports = {
   -webkit-user-select: none;
 }
 
+#ajout {
+
+  background-color: rgb(77, 77, 77);
+  color: white;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 20px;
+
+}
+
+.ajout:hover {
+  color: lightgreen;
+}
+
 .list:hover {
   color: lightgreen;
   cursor: pointer;
@@ -263,6 +309,7 @@ module.exports = {
 .footer {
   background-color: rgb(80, 80, 80);
   height: 20%;
+  min-height: 174.8px;
   width: 100%;
   position: absolute;
   bottom: 0;

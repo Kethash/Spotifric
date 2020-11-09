@@ -138,4 +138,8 @@ router.delete('/logout', (req, res) => {
 
 })
 
+router.post('/upload', (req, res) => {
+  
+})
+
 module.exports = router
