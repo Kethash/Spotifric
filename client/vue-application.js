@@ -103,7 +103,14 @@ var app = new Vue({
     if (audio.includes("youtube") || audio.includes("youtu.be")) {
       console.log('heyy')
       const res = await axios.post('/api/ytdownload', {audio});
+      setTimeout(() => {
+        var single = new Audio('./components/mp3/video.mp3')
+        single.play();
+        this.nowPlaying = single;
+        this.playing = true;
+    }, 1200);
 
+    
     } else {
       var single = new Audio(audio);
       console.log(single);
