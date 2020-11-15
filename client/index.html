@@ -35,9 +35,15 @@
                     :islogged="islogged"
                     :user="user"
                     :playlists="playlists"
+                    :nowplaying="nowplaying"
+                    :playing="playing"
                     @login-user="login"
                     @register-user="register"
                     @logout="logout"
+                    @play="play"
+                    @pause="pause"
+                    @resume="resume"
+                    @addMusique="addMusique"
                 ></router-view>
             </main>
         </div>

@@ -126,6 +126,8 @@ module.exports = {
     islogged: { type: Boolean },
     user: { type: Object },
     playlists: { type: Array },
+    nowplaying: { type: Object },
+    playing: { type: Boolean },
   },
 
   data() {
@@ -134,8 +136,8 @@ module.exports = {
 
       current_list: [],
 
-      nowPlaying: null,
-      playing: false,
+      //nowPlaying: null,
+      //playing: false,
 
       file: "",
 
@@ -149,29 +151,15 @@ module.exports = {
 
   methods: {
     play(audio) {
-      if (audio.includes("youtube") || audio.includes("youtu.be")) {
-
-      } else {
-        var single = new Audio(audio);
-        single.play();
-      }
-
-      if (this.nowPlaying) {
-        this.nowPlaying.pause();
-      }
-
-      this.nowPlaying = single;
-      this.playing = true;
+      this.$emit('play', audio);
     },
 
     pause() {
-      this.nowPlaying.pause();
-      this.playing = false;
+      this.$emit('pause');
     },
 
     resume() {
-      this.nowPlaying.play();
-      this.playing = true;
+      this.$emit('resume');
     },
 
     change_list(playlist) {
@@ -180,6 +168,10 @@ module.exports = {
 
     ajouterMusique() {
       this.file = this.$refs.file.files[0];
+    },
+
+    addMusique() {
+      this.emit('addMusique', 'https://youtu.be/aRZtygqwMi4')
     },
 
     async postMusic() {

@@ -43,8 +43,12 @@ var app = new Vue({
     { title: "Random 2", music: "http://soundbible.com/grab.php?id=915&type=mp3", image: "" },
     { title: "Rest", music: './components/mp3/Pheeno_Rest.mp3', image: "https://www.pokepedia.fr/images/thumb/c/cd/Rondoudou-RFVF.png/250px-Rondoudou-RFVF.png" },
     { title: "Mirai Ticket", music: './components/mp3/MIRAI_TICKET.mp3', image: "" },
+    { title: "Astronomia", music: 'https://youtu.be/--cxZbnmmoc', image: "" },
     ],
     }],
+
+    nowplaying : null,
+    playing : false,
   },
   async mounted() {
   const res = await axios.get('/api/me');
@@ -90,7 +94,43 @@ var app = new Vue({
     } catch (err) {
       console.log(err);
     }
-
   },
+
+  // Fonctions qui permettent de jouer de la musique
+
+
+  async play(audio) {
+    if (audio.includes("youtube") || audio.includes("youtu.be")) {
+      console.log('heyy')
+      const res = await axios.post('/api/ytdownload', {audio});
+
+    } else {
+      var single = new Audio(audio);
+      console.log(single);
+      single.play();
+    }
+
+    if (this.nowPlaying) {
+      this.nowPlaying.pause();
+    }
+
+    this.nowPlaying = single;
+    this.playing = true;
+  },
+
+  async pause() {
+    this.nowPlaying.pause();
+    this.playing = false;
+  },
+
+  async resume() {
+    this.nowPlaying.play();
+    this.playing = true;
+  },
+
+  async addMusique(link) {
+    axios.post('/api/upload', link);
+  }
+
 },
 })

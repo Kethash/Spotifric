@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
 
+const ytdl = require('ytdl-core');
+const fs = require('fs');
+
 const bcrypt = require('bcrypt')
 const { Client } = require('pg')
 
@@ -138,8 +141,14 @@ router.delete('/logout', (req, res) => {
 
 })
 
-router.post('/upload', (req, res) => {
+router.post('/ytdownload', (req, res) => {
+  console.log(req.body);
   
+  req.session.ytsong = ytdl(req.body.audio, { filter: 'audioonly' })
+    .pipe(fs.createReadStream(req.session.ytsong));
+  //res.status(200).json({message: 'Sucess !', song: ytsong});
+  return
 })
+
 
 module.exports = router
