@@ -111,7 +111,7 @@ var app = new Vue({
         single.play();
         this.nowPlaying = single;
         this.playing = true;
-    }, 1500);
+    }, 1000);
     } else {
       var single = new Audio(audio.music);
       console.log(single);

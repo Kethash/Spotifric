@@ -146,30 +146,27 @@ router.post('/ytdownload', (req, res) => {
 
   const file = './client/components/mp3/' + req.body.audio.title + '.mp3';
 
+  if(fs.existsSync(file)) {
+    res.status(200).json({message: 'File already exists !'});
+    return
+  }
+
   if(req.session.write) {
     req.session.write.close();
   }
   console.log(req.body.audio.music)
 
-  if(fs.existsSync(file)) {
-    fs.unlinkSync(file);
-  }
 
   const write = fs.createWriteStream(file, { 
     flags : 'w'});
 
-  ffmpeg().input(ytdl(req.body.audio.music)).toFormat('mp3').pipe(write);
+  ffmpeg().input(ytdl(req.body.audio.music), { filter: 'audioonly' }).toFormat('mp3').pipe(write);
 
   write.on('finish', () => {
     res.status(200).json({message: 'Sucess !'});
     req.session.write = write;
   })
 
-  write.on('error', () => {
-    if(fs.existsSync(file)) {
-      fs.unlinkSync(file);
-    }
-  })
 
   /*
   write.on('close', () => {
