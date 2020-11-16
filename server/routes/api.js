@@ -144,12 +144,12 @@ router.delete('/logout', (req, res) => {
 
 router.post('/ytdownload', (req, res) => {
 
-  const file = './client/components/mp3/video.mp3';
+  const file = './client/components/mp3/' + req.body.audio.title + '.mp3';
 
   if(req.session.write) {
     req.session.write.close();
   }
-  console.log(req.body.audio)
+  console.log(req.body.audio.music)
 
   if(fs.existsSync(file)) {
     fs.unlinkSync(file);
@@ -158,7 +158,7 @@ router.post('/ytdownload', (req, res) => {
   const write = fs.createWriteStream(file, { 
     flags : 'w'});
 
-  ffmpeg().input(ytdl(req.body.audio)).toFormat('mp3').pipe(write);
+  ffmpeg().input(ytdl(req.body.audio.music)).toFormat('mp3').pipe(write);
 
   write.on('finish', () => {
     res.status(200).json({message: 'Sucess !'});

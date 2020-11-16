@@ -102,19 +102,18 @@ var app = new Vue({
 
   async play(audio) {
 
-
-    if (audio.includes("youtube") || audio.includes("youtu.be")) {
+    if (audio.music.includes("youtube") || audio.music.includes("youtu.be")) {
       console.log('heyy')
       //await axios.delete('/api/deletemp3');
       const res = await axios.post('/api/ytdownload', {audio});
       setTimeout(() => {
-        var single = new Audio('./components/mp3/video.mp3')
+        var single = new Audio('./components/mp3/'+ audio.title +'.mp3')
         single.play();
         this.nowPlaying = single;
         this.playing = true;
     }, 1500);
     } else {
-      var single = new Audio(audio);
+      var single = new Audio(audio.music);
       console.log(single);
       single.play();
     }
