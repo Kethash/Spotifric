@@ -149,55 +149,39 @@ router.post('/ytdownload', (req, res) => {
   if(fs.existsSync(file)) {
     res.status(200).json({message: 'File already exists !'});
     return
+  } else {
+    
+    const write = fs.createWriteStream(file, { 
+      flags : 'w'});
+
+    ffmpeg().input(ytdl(req.body.audio.music)).toFormat('mp3').noVideo().pipe(write);
+
+    write.on('finish', () => {
+      res.status(200).json({message: 'Sucess !'});
+      req.session.write = write;
+    })
   }
 
   if(req.session.write) {
     req.session.write.close();
   }
-  console.log(req.body.audio.music)
-
-
-  const write = fs.createWriteStream(file, { 
-    flags : 'w'});
-
-  ffmpeg().input(ytdl(req.body.audio.music), { filter: 'audioonly' }).toFormat('mp3').pipe(write);
-
-  write.on('finish', () => {
-    res.status(200).json({message: 'Sucess !'});
-    req.session.write = write;
-  })
-
-
-  /*
-  write.on('close', () => {
-    fs.unlinkSync(file);
-  })*/
-
   
-
-  
-  //ffmpeg().input(ytdl(req.body.audio)).toFormat('mp3').pipe(write);
-
-  
-  return
+  return;
 })
 
-router.delete('/deletemp3', (req,res) => {
 
-  const file = './client/components/mp3/video.mp3';
+router.post('/upload', (req, res) => {
 
-  if (fs.existsSync(file)){
-    fs.unlink(file, function(err) {
-      if (err) throw err;
-    });
-
-    res.status(200).json({message: 'Sucess !'})
-    return
-  }
-  res.status(200).json({message: 'MP3 not found !'})
-  return
+  async function add (email, password) {
+    const sql = "SELECT * FROM users WHERE email=$1 AND password=$2"
+    await client.query({
+      text: sql,
+      values: [email, password] // ici name et description ne sont pas concaténées à notre requête
+    })
+ }
+  
+ 
 
 })
-
 
 module.exports = router

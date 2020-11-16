@@ -10,11 +10,31 @@
             </div>
           </div>
 
-          <form @submit.prevent="postMusic()" enctype="multipart/form-data" >
+          <button id="ajout" @click="show = !show" >Ajouter Musique </button>
 
+          <form @submit.prevent="postMusic" id="addForm" v-if="show">
+
+            <input 
+              type="text"
+              placeholder="titre"
+              v-model="add.title"
+              required
+            />
+            <input 
+              type="text"
+              placeholder="Lien de la musique (YouTube ou autre)"
+              v-model="add.link"
+              required
+            />
+
+            <input 
+              type="text"
+              placeholder="Lien de l'image (optionnel)"
+              v-model="add.image"
+            />
+
+            <button type="submit">Ajouter</button>
             
-            <input id="ajout" type="file" ref="file" @change="ajouterMusique" hidden/>
-            <label id="ajout" for="ajout">Ajouter musique</label>
 
           </form>
         </nav>
@@ -142,6 +162,12 @@ module.exports = {
       file: "",
 
       show : false,
+
+      add : {
+        title: "",
+        link: "",
+        image: "",
+      }
     };
   },
 
@@ -171,16 +197,9 @@ module.exports = {
     },
 
     addMusique() {
-      this.emit('addMusique', 'https://youtu.be/aRZtygqwMi4')
+      this.emit('addMusique', form.link);
     },
 
-    async postMusic() {
-      const formData = newFormData();
-      formData.append('file', this.file);
-
-
-      await axios.post('/upload', formData);
-    }
   },
 };
 </script>
@@ -258,9 +277,42 @@ module.exports = {
   cursor: pointer;
   margin-top: 1rem;
   font-size: 20px;
+  border: none;
 
 }
 
+#addForm{
+
+  margin-top: 20px;
+  height: 200px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: solid white;
+  border-radius: 10px;
+
+}
+
+#addForm input {
+  margin-top: 20px;
+  border: none;
+  border-bottom: solid white 1px;
+  background-color: black;
+  color: white;
+  outline: none;
+  width: 80%;
+}
+
+#addForm button {
+
+  background-color: white;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  margin-bottom: 20px;
+}
 .ajout:hover {
   color: lightgreen;
 }
