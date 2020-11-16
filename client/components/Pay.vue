@@ -220,7 +220,7 @@ h4 {
   padding: 13px;
   background-color: #fcfcfc;
   display: inline-block;
-  float: left;
+  float: none;
   text-align: center;
   border: 1px solid #c0bfbf;
 }
@@ -246,7 +246,7 @@ h4 {
   width: 50%;
   padding: 12px;
   background-color: #fcfcfc;
-  float: left;
+  float: none;
   text-align: center;
   font-size: 16px;
   outline: none;
