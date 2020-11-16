@@ -44,6 +44,7 @@ var app = new Vue({
     { title: "Rest", music: './components/mp3/Pheeno_Rest.mp3', image: "https://www.pokepedia.fr/images/thumb/c/cd/Rondoudou-RFVF.png/250px-Rondoudou-RFVF.png" },
     { title: "Mirai Ticket", music: './components/mp3/MIRAI_TICKET.mp3', image: "" },
     { title: "Astronomia", music: 'https://youtu.be/--cxZbnmmoc', image: "" },
+    { title: "Earth", music: 'https://youtu.be/w1cWzw_evtQ', image: "" },
     ],
     }],
 
@@ -100,19 +101,19 @@ var app = new Vue({
 
 
   async play(audio) {
-    if (audio.includes("youtube") || audio.includes("youtu.be")) {
+
+    if (audio.music.includes("youtube") || audio.music.includes("youtu.be")) {
       console.log('heyy')
+      //await axios.delete('/api/deletemp3');
       const res = await axios.post('/api/ytdownload', {audio});
       setTimeout(() => {
-        var single = new Audio('./components/mp3/video.mp3')
+        var single = new Audio('./components/mp3/'+ audio.title +'.mp3')
         single.play();
         this.nowPlaying = single;
         this.playing = true;
-    }, 1200);
-
-    
+    }, 1000);
     } else {
-      var single = new Audio(audio);
+      var single = new Audio(audio.music);
       console.log(single);
       single.play();
     }
@@ -120,6 +121,8 @@ var app = new Vue({
     if (this.nowPlaying) {
       this.nowPlaying.pause();
     }
+
+    
 
     this.nowPlaying = single;
     this.playing = true;

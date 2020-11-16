@@ -21,7 +21,7 @@
 
         <nav class="display_list">
           <div
-            @click="play(box.music)"
+            @click="play(box)"
             class="musicbox"
             v-for="box in this.current_list"
             :key="box.title"
