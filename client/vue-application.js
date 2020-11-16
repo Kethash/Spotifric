@@ -45,6 +45,7 @@ var app = new Vue({
     { title: "Mirai Ticket", music: './components/mp3/MIRAI_TICKET.mp3', image: "" },
     { title: "Astronomia", music: 'https://youtu.be/--cxZbnmmoc', image: "" },
     { title: "Earth", music: 'https://youtu.be/w1cWzw_evtQ', image: "" },
+    { title: "Geoplex Daybreak", music: 'https://youtu.be/yz9mqIbMSGA', image: "" },
     ],
     }],
 
@@ -105,13 +106,13 @@ var app = new Vue({
     if (audio.music.includes("youtube") || audio.music.includes("youtu.be")) {
       console.log('heyy')
       //await axios.delete('/api/deletemp3');
-      const res = await axios.post('/api/ytdownload', {audio});
-      setTimeout(() => {
+      const res = axios.post('/api/ytdownload', {audio}).then( () => {
         var single = new Audio('./components/mp3/'+ audio.title +'.mp3')
         single.play();
         this.nowPlaying = single;
         this.playing = true;
-    }, 1000);
+        return
+      });
     } else {
       var single = new Audio(audio.music);
       console.log(single);
@@ -139,7 +140,7 @@ var app = new Vue({
   },
 
   async addMusique(link) {
-    axios.post('/api/upload', link);
+    axios.post('/api/upload', {link});
   }
 
 },
