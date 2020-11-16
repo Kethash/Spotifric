@@ -144,13 +144,62 @@ router.delete('/logout', (req, res) => {
 
 router.post('/ytdownload', (req, res) => {
 
+  const file = './client/components/mp3/video.mp3';
+
+  if(req.session.write) {
+    req.session.write.close();
+  }
   console.log(req.body.audio)
 
-  ffmpeg().input(ytdl(req.body.audio)).toFormat('mp3').pipe(fs.createWriteStream('./client/components/mp3/video.mp3'));
+  if(fs.existsSync(file)) {
+    fs.unlinkSync(file);
+  }
+
+  const write = fs.createWriteStream(file, { 
+    flags : 'w'});
+
+  ffmpeg().input(ytdl(req.body.audio)).toFormat('mp3').pipe(write);
+
+  write.on('finish', () => {
+    res.status(200).json({message: 'Sucess !'});
+    req.session.write = write;
+  })
+
+  write.on('error', () => {
+    if(fs.existsSync(file)) {
+      fs.unlinkSync(file);
+    }
+  })
+
+  /*
+  write.on('close', () => {
+    fs.unlinkSync(file);
+  })*/
+
   
 
-  res.status(200).json({message: 'Sucess !'});
+  
+  //ffmpeg().input(ytdl(req.body.audio)).toFormat('mp3').pipe(write);
+
+  
   return
+})
+
+router.delete('/deletemp3', (req,res) => {
+
+  const file = './client/components/mp3/video.mp3';
+
+  if (fs.existsSync(file)){
+    fs.unlink(file, function(err) {
+      if (err) throw err;
+    });
+
+    res.status(200).json({message: 'Sucess !'})
+    return
+  }
+  res.status(200).json({message: 'MP3 not found !'})
+  return
+
 })
 
 
