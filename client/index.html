@@ -10,25 +10,27 @@
         <script src="https://cdn.jsdelivr.net/npm/http-vue-loader/src/httpVueLoader.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    
     </head>
     <body>
         <div id="app">
             <header>
                 <nav class="menubar">
-                    <router-link to='/'><img class="image" src="ressources/spotify.jpg"/></router-link>
-                    <router-link to='/'>$ Spotifric $</router-link>
-                    <router-link to='/abonnement'>Abonnements </router-link>
-                    <router-link to='/ket'> Debug </router-link>
-                    <router-link to='/newcomer'> DebugNewcomer </router-link>
-                    <router-link to='/profil' v-if="islogged"> Profil </router-link>
+                    <router-link to="/"
+                        ><img class="image" src="ressources/spotify.jpg"
+                    /></router-link>
+                    <router-link to="/">$ Spotifric $</router-link>
+                    <router-link to="/abonnement">Abonnements </router-link>
+                    <router-link to="/ket"> Debug </router-link>
+                    <router-link to="/newcomer"> DebugNewcomer </router-link>
+                    <router-link to="/profil" v-if="islogged">
+                        Profil
+                    </router-link>
                 </nav>
             </header>
 
             <transition name="fade">
-                <div class="logout" v-if="logged_out"> Au revoir ! </div>
+                <div class="logout" v-if="logged_out">Au revoir !</div>
             </transition>
-            
 
             <main>
                 <router-view
@@ -50,19 +52,13 @@
         <script src="/vue-application.js"></script>
     </body>
 
-    <footer>
-        <p> ceci est un paragrazphe </p>
-    </footer>
-
-
     <style>
-
-        html{
+        html {
             min-width: 650px;
             max-height: 1000px;
             min-height: 700px;
         }
-        
+
         nav {
             background-color: black;
             color: white;
@@ -76,7 +72,7 @@
             flex-wrap: wrap;
         }
 
-        .menubar{
+        .menubar {
             max-height: 50px;
             overflow: auto;
         }
@@ -91,24 +87,26 @@
             flex-shrink: 3;
         }
 
-        nav a:hover{
+        nav a:hover {
             color: lightgreen;
         }
 
         body {
             margin: 0;
-            background: linear-gradient(to right, #55C92D, #A3EF35);
+            background: linear-gradient(to right, #55c92d, #a3ef35);
         }
 
-        .image{
+        .image {
             height: 45px;
         }
 
-        .fade-enter-active, .fade-leave-active {
-            transition: opacity .5s;
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity 0.5s;
         }
 
-        .fade-enter, .fade-leave-to {
+        .fade-enter,
+        .fade-leave-to {
             opacity: 0;
         }
 
@@ -119,8 +117,7 @@
             align-items: center;
             justify-content: center;
             font-size: 30px;
-            position:absolute;
+            position: absolute;
         }
-
     </style>
 </html>

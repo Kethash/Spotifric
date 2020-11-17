@@ -18,6 +18,9 @@
       </div>
       <div class="venez" @click="rejoindre">Rejoignez Nous</div>
       <div class="image"> </div>
+      <footer>
+        <p> ceci est le footer </p>
+      </footer>
     </div>
 
     <div class="hero" v-if="registering">
@@ -87,10 +90,9 @@
         </form>
       </div>
     </div>
+    
   </div>
-  <footer>
-    <p> ceci est le footer </p>
-  </footer>
+  
 </template>
 
 <script>
@@ -370,6 +372,13 @@ span {
   display: flex;
   align-items: center;
   flex-direction: row;
+  width: 100%;
+}
+
+footer {
+  bottom : 0;
+  left: 0;
+  position: fixed;
   width: 100%;
 }
 </style>
