@@ -157,6 +157,7 @@ var app = new Vue({
 
     await axios.post('/api/upload', {list});
   }
+  
 
 },
 })

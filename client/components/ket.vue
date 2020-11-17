@@ -165,7 +165,7 @@ module.exports = {
 
       add : {
         title: "",
-        link: "",
+        music: "",
         image: "",
       }
     };

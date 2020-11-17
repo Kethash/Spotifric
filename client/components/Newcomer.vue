@@ -52,11 +52,10 @@ module.exports = {
 
 <style scoped>
 .container {
-  width: auto;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   background: linear-gradient(to right, #55c92d, #a3ef35);
   font-size: 24px;
-  padding: 25px;
 }
 
 .parallax {
