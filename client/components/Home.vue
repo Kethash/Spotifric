@@ -331,7 +331,6 @@ span {
   background-image: url('../ressources/images/money.gif');
   width: 240px;
   height: 310px;
-  right: 200px;
 }
 
 #login {
