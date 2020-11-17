@@ -17,6 +17,7 @@
         </em>
       </div>
       <div class="venez" @click="rejoindre">Rejoignez Nous</div>
+      <div class="image"> </div>
     </div>
 
     <div class="hero" v-if="registering">
@@ -324,6 +325,13 @@ span {
   height: 50%;
   display: flex;
   align-items: center;
+}
+
+.image{
+  background-image: url('../ressources/images/money.gif');
+  width: 240px;
+  height: 310px;
+  right: 200px;
 }
 
 #login {
