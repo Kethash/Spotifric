@@ -42,7 +42,7 @@
         <ul class="princing__plan__list">
           <li class="pricing__plan__feature">Telecharger max 10000 musiques</li>
           <li class="pricing__plan__feature">partez avec 1500 credits</li>
-          <li class="pricing__plan__feature">ajouter vos musiques et telecharger en d'autres</li>
+          <li class="pricing__plan__feature">ajouter vos musiques ou supprimez les</li>
           <li class="pricing__plan__feature">changer votre fond d'ecran sur votre session SPOTIFRIC</li>
         </ul>
       </div>

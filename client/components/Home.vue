@@ -88,6 +88,9 @@
       </div>
     </div>
   </div>
+  <footer>
+    <p> ceci est le footer </p>
+  </footer>
 </template>
 
 <script>
