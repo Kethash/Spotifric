@@ -329,8 +329,19 @@ span {
 
 .image{
   background-image: url('../ressources/images/tenor.gif');
-  width: 240px;
+  width: 2400px;
   height: 410px;
+  animation: moveSlideshow 0.5s linear infinite;
+  margin-top: 50px;
+  margin-left: -100px;
+  position: fixed;
+}
+
+
+@keyframes moveSlideshow {
+  100% { 
+    transform: translateX(-10%);
+  }
 }
 
 #login {
