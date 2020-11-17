@@ -7,7 +7,7 @@
     </div>
     -->
 
-      <div class="hd">Ressentez la musique</div>
+      <div class="hd">Achetez la musique</div>
 
       <div class="content">
         <em>
@@ -328,9 +328,9 @@ span {
 }
 
 .image{
-  background-image: url('../ressources/images/money.gif');
+  background-image: url('../ressources/images/tenor.gif');
   width: 240px;
-  height: 310px;
+  height: 410px;
 }
 
 #login {
