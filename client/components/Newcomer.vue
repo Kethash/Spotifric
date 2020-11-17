@@ -4,6 +4,12 @@
             Praesentium, tempore! Odit, laborum. 
             Ab asperiores ad quod corrupti necessitatibus libero natus fugit soluta,
             incidunt deserunt ratione reprehenderit sequi ex accusamus quia.
+            <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Perspiciatis officiis illo recusandae repudiandae tempora omnis nulla 
+            iure nobis autem repellat vitae amet beatae laudantium quia suscipit 
+            quidem, quasi ut at?
+        </p>
         </p>
         <div class="parallax">
         </div>
@@ -13,10 +19,24 @@
             iure nobis autem repellat vitae amet beatae laudantium quia suscipit 
             quidem, quasi ut at?
         </p>
+        <div class="new">
+        </div>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Perspiciatis officiis illo recusandae repudiandae tempora omnis nulla 
+            iure nobis autem repellat vitae amet beatae laudantium quia suscipit 
+            quidem, quasi ut at?
+        </p>
+        <div class="second">
+        </div>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Perspiciatis officiis illo recusandae repudiandae tempora omnis nulla 
+            iure nobis autem repellat vitae amet beatae laudantium quia suscipit 
+            quidem, quasi ut at?
+        </p>
     </div>
-    <p> JE COMPLETE DEMAIN LE STYLE PARALLAX AVEC LES PHTOS MISES </p>
 
-  
 </template>
 
 <script>
@@ -42,7 +62,7 @@ module.exports = {
 <style scoped>
 
 .container{
-    max-width: 960px;
+    width: auto;
     margin: 0 auto;
     background: #f9f9f9;
     font-size: 24px;
@@ -50,12 +70,30 @@ module.exports = {
 }
 
 .parallax{
-    background: url('components/bitcoin.jpg') no-repeat center;
+    background: url('../../ressources/images/fricspotify.jpg') no-repeat center;
     background-size: cover;
     background-attachment: fixed;
-    height: 500px;
+    height: 300px;
 
 }
+
+.new{
+    background: url('../../ressources/images/jeton.png') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 300px;
+
+}
+
+
+.second{
+    background: url('../../ressources/images/derniereamettre.png') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 300px;
+
+}
+
 
 
 

@@ -15,7 +15,7 @@
         <ul class="princing__plan__list">
           <li class="pricing__plan__feature">Telecharger max 1000 musiques</li>
           <li class="pricing__plan__feature">partez avec 500 credits</li>
-          <li class="pricing__plan__feature">a completer</li>
+          <li class="pricing__plan__feature">ecouter la musique selectionnnée par l'aplication </li>
         </ul>
       </div>
 
@@ -34,15 +34,16 @@
       <div class="pricing__plan__header">
         <h1 class="pricing__plan__title">Deluxe</h1>
         <h2 class="pricing__plan__summary">
-          Pour ceux qui souhaite les fonctionanlites de base
+          Pour ceux qui souhaite les fonctionanlites très avancées
         </h2>
       </div>
 
       <div class="pricing__plan__description">
         <ul class="princing__plan__list">
-          <li class="pricing__plan__feature">Telecharger max 1000 musiques</li>
-          <li class="pricing__plan__feature">partez avec 500 credits</li>
-          <li class="pricing__plan__feature">a completer</li>
+          <li class="pricing__plan__feature">Telecharger max 10000 musiques</li>
+          <li class="pricing__plan__feature">partez avec 1500 credits</li>
+          <li class="pricing__plan__feature">ajouter vos musiques et telecharger en d'autres</li>
+          <li class="pricing__plan__feature">changer votre fond d'ecran sur votre session SPOTIFRIC</li>
         </ul>
       </div>
 
@@ -61,15 +62,15 @@
       <div class="pricing__plan__header">
         <h1 class="pricing__plan__title">Premium</h1>
         <h2 class="pricing__plan__summary">
-          Pour ceux qui souhaite les fonctionanlites de base
+          Pour ceux qui souhaite quelques fonctionnalitées avancées 
         </h2>
       </div>
 
       <div class="pricing__plan__description">
         <ul class="princing__plan__list">
-          <li class="pricing__plan__feature">Telecharger max 1000 musiques</li>
-          <li class="pricing__plan__feature">partez avec 500 credits</li>
-          <li class="pricing__plan__feature">a completer</li>
+          <li class="pricing__plan__feature">Telecharger max 5000 musiques</li>
+          <li class="pricing__plan__feature">partez avec 800 credits</li>
+          <li class="pricing__plan__feature"> ecouter votre propre musique </li>
         </ul>
       </div>
 
