@@ -171,16 +171,31 @@ router.post('/ytdownload', (req, res) => {
 
 
 router.post('/upload', (req, res) => {
-
-  async function add (email, password) {
-    const sql = "SELECT * FROM users WHERE email=$1 AND password=$2"
-    await client.query({
-      text: sql,
-      values: [email, password] // ici name et description ne sont pas concaténées à notre requête
-    })
- }
   
- 
+  const UserId = req.session.userId;
+
+  console.log(req.body.list);
+
+  console.log(req.session.userId);
+
+  if(!req.session.userId){
+    res.status(404).json({message: "User not found !"});
+  } else {
+
+    async function add (list, UserId) {
+      const sql = "UPDATE users SET playlists=$1 WHERE id=$2";
+      await client.query({
+        text: sql,
+        values: [list, UserId]
+      })
+
+      res.status(200).json({ message: 'La playlist a bien été ajoutée' })
+    }
+    
+    add(req.body.list, UserId);
+  }
+
+  
 
 })
 

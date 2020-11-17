@@ -12,7 +12,7 @@
 
           <button id="ajout" @click="show = !show" >Ajouter Musique </button>
 
-          <form @submit.prevent="postMusic" id="addForm" v-if="show">
+          <form @submit.prevent="addmusique" id="addForm" v-if="show">
 
             <input 
               type="text"
@@ -196,8 +196,8 @@ module.exports = {
       this.file = this.$refs.file.files[0];
     },
 
-    addMusique() {
-      this.emit('addMusique', form.link);
+    addmusique() {
+      this.$emit('addmusique', this.add);
     },
 
   },
