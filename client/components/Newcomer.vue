@@ -5,40 +5,31 @@
             <h1 class="etape"> Etape 0 - Introduction </h1>
         </div>
 
-        <p class="para1">
-            Ce site est le pur alter-égo du site officel Spotify. Cependant, chez nous, vous entrez dans 
-            un monde reservé aux riches. Sur cette page de présentation, vous retrouverez un <strong> TUTO </strong> 
-            pour comprendre comment fonctionne notre site reservé à l'élite ! Vous tardez d'ecouter de la musique, 
-            et de tout controler ? alors n'attendez plus, et découvrez notre guide complet pour bien débuter !
+        <p>
+            Ce site est le pur alter-égo du site officel Spotify, mondialement connu. Cependant, chez nous, vous entrez dans 
+            un monde reservé aux riches. Sur cette page de présentation, vous retrouverez un un TUTO 
+            pour comprendre comment fonctionne notre site reservé à l"élite ! Vous tardez d'ecouter de la musique, 
+            et de tout savoir controler ? alors n'attendez plus, et devouvrez notre guide complet pour bien débuter !
         </p>
 
-        <div class="new"> <h1 class="etape"> Etape 1 - Activer son Compte </h1> </div>
-        <p class="para1">
-          Pour commencer a vous familiarise avec Spotifric, il faut savoir que notre site est basé sur un système de partage de musique, mais de plus, 
-          vous avez le choix de pouvoir <strong> personnaliser </strong> bon vous semble votre application. Notre site fonctionne avec un abonnemment, 3 chois s'offrent : <ul>
-            <li> Standart --> 250 € par mois </li>
-            <li> Premium --> 500 € par mois </li>
-            <li> Deluxe --> 1000 € par mois </li>
-          </ul>
-          Pour chaque <strong> pack d'abonnement </strong>, vous avez la possibilite d'accéder à divers <strong> fonctionnalitées avancées </strong>.
-          Afin de gerer vos personnalisations, vous disposerez d'une <strong> monnaie virtuelle </strong>. Suivant l'abonnement que vous prennez, vous disposerez de :
-          <ul>
-            <li> 500 Crédits </li>
-            <li> 800 Crédits </li>
-            <li> 1500 Crédits </li>
-          </ul>
-          Avec ce crédits, vous pourrez changer de couleur, supprimer ou ajouter une musique.  
+        <div class="new"> <h1 class="etape"> Etape 1 - Compte </h1> </div>
+        <p>
+            Pour commencer a vous familiarise avec spotirifr, il est impératif de savoir que notre site est basé sur un systeme de partagfe de musique classqiue comme spotirfy, mais de plus, 
+            vous avez le choix de pouvoir perosnnaliser comme bon vous semble votre application. Notre site fonctionne en effet par un systeme d'aonnemment, allant de 500 a 10000 par mois, 
+            et pour chaque pack d'abonnement disponible, vous avez la possibilite d'accéder a des fonctionanltes avancées. Vous commencez avec au minim <strong> 500 Jetons </strong>, qui 
+            sont une monnaie virtuelle. Ces jetons vous pêrmettrons de pouvoir ajouter des clips musicaux, (20 jetons par clip), de changer le fond de votre session spotrifric (200 Jetons), etde 
+            personnamliser les fond d'ecran de vos musiques (150 Jetons).  
         </p>
         <div class="second"> <h1 class="etape"> Etape 2 - Enjoy </h1>
         </div>
-        <p class="para1">
+        <p>
             Vous voila maintenant près à découvrir notre nouvelle appli de streaming 
-            révolutionnaire ! Vous pouvez dès a present vous connecter, accéder a votre session
-            via n'importe quel appareil, et <strong> ecouter 24H/7j </strong> la musique a fond !
-            A vous de jouer !
+            révolutionnaire ! Vous pouvez des que vous vous etes creer un compte, acceder a votre session musicale
+            via n'importe quel apparail, et ecouter 24H/7j votre musique a fond comme bon vous le semble !
+            vous etes desormais maitre de l'application, et pouvez en profiter pleinement. A vous de jouer !
 
             Si vous avez la moindre question concernant l'application, ou si un bug parvient, 
-            nous vous prions de bien vouloir contacter le service client en remplissant votre email. 
+            nous vous prions de bien vouloir contacter le service client disponible a l'acceuil du site. 
             Nous vous remercions pour votre confiance, ENJOY !!
         </p>
     </div>
@@ -90,8 +81,7 @@ module.exports = {
 }
 
 .second {
-  background: url("../../ressources/images/derniereamettre.png") no-repeat
-    center;
+  background: url("../../ressources/images/derniereamettre.png") no-repeat center;
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
@@ -101,30 +91,80 @@ module.exports = {
   align-items: center;
 }
 
-.etape {
-  position: absolute;
+.etape{
+    position: absolute;
 
-  color: green;
-  background: lightgreen;
-  border-radius: 20px solid black;
-  font-style: oblique;
-  font-weight: bold;
-  font-family: arial, "Times New Roman", serif;
+    color:green;
+    background: lightgreen;
+    border-radius : 20px solid black;
+    font-style: oblique;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
-.titre {
-  font-size: xlarge;
-  font-style: unset;
-  text-align: center;
-  font-family: arial, Times, serif;
-  color: white;
-  background-color: black;
-  border: 1px groove white;
-}
-
-.para1 {
-  border: 1px solid black;
-  background-color: white;
-  padding: 5px;
+.titre{
+    font-size: xlarge;
+    font-style: unset;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 40px;
 }
 </style>
+
+
+
+<!-- <style scoped>
+
+.main{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bloc{
+    background-color: aquamarine;
+    width: 85%;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.bloc h2, .bloc h1 {
+    margin-left: 10px;
+}
+
+.bloc p {
+    margin-left: 10px;
+} 
+
+
+
+</style> -->
+
+
+
+<!-- <article class="main">
+        <h1>Bienvenue dans un monde riche en musique</h1>
+
+        <article class="bloc">
+            <h2>Ce site est l'alter-égo de Spotify mais par les riches pour les riches</h2>
+            <h1>Qu'es-ce que Spotify ?</h1>
+            <p>Spotify est un service de musique en streaming, il fonctionne sous abonnement mensuel avce différents tarifs selon le type d'abonnement</p>
+        </article>
+        <article class="bloc">
+
+        </article>
+        <article class="bloc">
+
+        </article>
+
+
+  </article>
+
+  -->

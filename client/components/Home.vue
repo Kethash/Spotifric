@@ -19,30 +19,7 @@
       <div class="venez" @click="rejoindre">Rejoignez Nous</div>
       <div class="image"> </div>
       <footer>
-        <div class="footer-wrapper">
-          <div class="single-footer">
-            <h2> Spotifric </h2>
-            <label for="email"> Recevoir les news : </label>
-            <input type="email" name="email" id="email" placeholder="email@spotifric.com" />
-          </div>
-
-          <div class="single-footer">
-            <h2> Navigation </h2>
-            <ul> 
-              <li> <button> <a href="#"> Acceuil </a> </button> </li>
-              <li> <button> <a href="#">A propos </a> </button> </li>
-              <li> <button> <a href="#"> Contact </a> </button> </li>
-            </ul>
-          </div>
-
-          <div class="single-footer">
-            <h2>  Nous contacter ? </h2>
-            <ul>
-              <li> <button> <a href="#"> Mon compte </a> </button> </li>
-              <li> <button> <a href="#"> Aide </a> </button> </li>
-              <li> <button> <a href="#"> abonnement </a> </button> </li>
-            </ul>
-          </div>
+        <p> ceci est le footer </p>
       </footer>
     </div>
 
@@ -175,7 +152,7 @@ module.exports = {
 </script>
 
 <style scoped>
-@import "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css";
+
 .main {
   margin-left: 5%;
   margin-right: 25%;
@@ -304,7 +281,7 @@ img {
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  background-image: url("../ressources/images/cross.png");
+  background-image: url('../ressources/images/cross.png');
 }
 
 #close:hover {
@@ -355,8 +332,8 @@ span {
   align-items: center;
 }
 
-.image {
-  background-image: url("../ressources/images/tenor.gif");
+.image{
+  background-image: url('../ressources/images/tenor.gif');
   width: 2400px;
   height: 410px;
   animation: moveSlideshow 0.5s linear infinite;
@@ -365,8 +342,9 @@ span {
   position: fixed;
 }
 
+
 @keyframes moveSlideshow {
-  100% {
+  100% { 
     transform: translateX(-10%);
   }
 }
@@ -398,59 +376,9 @@ span {
 }
 
 footer {
-  width: 100%;
-  height: 150px;
+  bottom : 0;
+  left: 0;
   position: fixed;
-  bottom: 0;
-  background-color: black;
-}
-
-.footer-wrapper {
-  width: 1100px;
-  margin: 0;
-}
-
-.single-footer {
-  width: 33%;
-  float: left;
-  text-align: left;
-  color: #fff;
-}
-
-.single-footer ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.single-footer ul a {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #fff;
-  font-size: 12px;
-}
-
-.single-footer ul li {
-  padding: 3px;
-}
-
-.single-footer p {
-  width: 70%;
-}
-.single-footer h2{
-  margin: 10px;
-}
-
-button {
-  color: green;
-  background-color: green;
-  border-radius: 5px;
-  padding: 2px;
-}
-h2{
-  text-align: center;
-  color: green;
-  background-color: white;
-  border-radius: 20px;
+  width: 100%;
 }
 </style>
