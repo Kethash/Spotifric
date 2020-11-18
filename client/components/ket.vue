@@ -23,7 +23,7 @@
             <input 
               type="text"
               placeholder="Lien de la musique (YouTube ou autre)"
-              v-model="add.music"
+              v-model="add.link"
               required
             />
 

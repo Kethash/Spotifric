@@ -145,7 +145,7 @@ var app = new Vue({
 
     const newMusic = {
       title: add.title,
-      music: add.music,
+      music: add.link,
       image: add.image,
     };
 
