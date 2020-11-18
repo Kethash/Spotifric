@@ -75,19 +75,8 @@
           <i class="fa fa-user icon"></i>
         </div>
       </div>
-      <div class="input-box">
-        <select>
-          <option>1 juin</option>
-          <option>2 juin</option>
-          <option>3 juin</option>
-          <option>4 juin</option>
-        </select>
-        <select>
-          <option>2020</option>
-          <option>2021</option>
-          <option>2022</option>
-          <option>2023</option>
-        </select>
+      <div class="box">
+        <input type="date" />
       </div>
       <div class="input-group">
         <div class="input-box">
@@ -213,6 +202,14 @@ h4 {
 
 .radio {
   display: none;
+}
+
+.box{
+  position: center;
+  text-align: center;
+  left: 50px;
+  height: 30px;;
+
 }
 
 .input-box label {
