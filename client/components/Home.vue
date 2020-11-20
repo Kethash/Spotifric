@@ -380,5 +380,10 @@ footer {
   left: 0;
   position: fixed;
   width: 100%;
+  height: 50px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 </style>
