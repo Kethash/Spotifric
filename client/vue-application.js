@@ -174,7 +174,8 @@ var app = new Vue({
   },
 
   async removemusic(box) {
-    await axios.delete('/api/playlist/' + box);
+    this.playlists.musiques.splice(this.playlists.musiques.indexOf(box),1)
+    await axios.delete('/api/playlist/' + box.title);
     const res2 = await axios.get('/api/user/playlists');
     this.playlists = res2.data.data;
   },

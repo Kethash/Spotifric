@@ -184,7 +184,7 @@ module.exports = {
 
     remove(box) {
       console.log(box.title)
-      this.$emit('remove', box.title);
+      this.$emit('remove', box);
     },
 
     restore() {

@@ -232,7 +232,6 @@ router.delete('/playlist/:nom', (req, res) => {
   const titre = req.params.nom;
   const userID = req.session.userId;
 
-  console.log(titre);
   async function deleter(titre) {
 
     //On récupère toutes les musiques de la playlist de l'utilisateur
@@ -272,7 +271,13 @@ router.delete('/playlist/:nom', (req, res) => {
 
   }
 
-  deleter(titre);
+  if(userID) {
+    deleter(titre);
+  } else {
+    res.status(404).json({message: 'User not found !'});
+  }
+
+  
 
 })
 
