@@ -6,14 +6,14 @@
         <article class="para10">
             Ce site est l'alter-égo du site officiel Spotify. Cependant, chez nous, vous entrez dans un
             <mark class="surlignement">monde reservé aux riches</mark>. Sur cette page de présentation, vous retrouverez un <strong> TUTO </strong> 
-            pour comprendre comment fonctionne notre site reservé uniquement à l'élite ! Vous tardez d'écouter de la vraie musique, 
+            pour comprendre comment fonctionne notre site reservé uniquement à l'élite ! </br> </br> Vous tardez d'écouter de la vraie musique, 
             et de tout contrôler ? Alors n'attendez plus, et suivez nos instructions ainsi que nos recommendations pour bien débuter !
         </article>
 
         <div class="new"> <h1 class="etape"> Création d'un compte </h1> </div>
         <article class="para20">
           Pour commencer à vous familiariser avec Spotifric, il faut savoir que notre site est basé sur un système de partage de musique, mais de plus, 
-          vous avez le choix de pouvoir <mark class="surlignement">PERSONNALISER</mark> comme bon vous semble votre application. Notre site fonctionne avec un abonnement, 3 choiX s'offrent à vous : 
+          vous avez le choix de pouvoir <mark class="surlignement">PERSONNALISER</mark> comme bon vous semble votre application. Notre site fonctionne avec un abonnement, 3 choix s'offrent à vous : 
           <ul class="para2">
             <li> Standart = <strong> 250 € </strong> mois </li>
             <li> Premium = <strong> 500 € </strong> mois </li>

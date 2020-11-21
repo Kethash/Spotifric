@@ -2,7 +2,7 @@
   <div class="pricing__plan__container">
     <section class="pricing__plan">
       <div class="pricing__plan__special__text">
-        Pour les gens pas trop riche
+        Pour les gens peu riche
       </div>
       <div class="pricing__plan__header">
         <h1 class="pricing__plan__title">Standart</h1>
@@ -29,7 +29,7 @@
 
     <section class="pricing__plan pricing__plan__highlighted">
       <div class="pricing__plan__special__text">
-        Pour les gens extrement riche
+        Pour les gens très riche 
       </div>
       <div class="pricing__plan__header">
         <h1 class="pricing__plan__title">Deluxe</h1>
@@ -57,7 +57,7 @@
 
     <section class="pricing__plan">
       <div class="pricing__plan__special__text">
-        Pour les gens de classe moyenne
+        Pour les gens assez riche
       </div>
       <div class="pricing__plan__header">
         <h1 class="pricing__plan__title">Premium</h1>

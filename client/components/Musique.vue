@@ -3,7 +3,7 @@
     <div class="main">
       <div class="navigation">
         <nav class="sidebar">
-          <h1>Playlists</h1>
+          <h1> Ma playlist</h1>
 
           <button id="ajout" @click="show = !show" >Ajouter Musique </button>
 
