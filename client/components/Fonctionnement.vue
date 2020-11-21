@@ -5,9 +5,9 @@
         </div>
         <article class="para10">
             Ce site est l'alter-égo du site officiel Spotify. Cependant, chez nous, vous entrez dans un
-            <mark class="surlignement">monde reservé aux riches</mark>. Sur cette page de présentation, vous retrouverez un <strong> TUTO </strong> 
+            monde reservé aux riches. </br> </br>Sur cette page de présentation, vous retrouverez un <strong> TUTO </strong> 
             pour comprendre comment fonctionne notre site reservé uniquement à l'élite ! </br> </br> Vous tardez d'écouter de la vraie musique, 
-            et de tout contrôler ? Alors n'attendez plus, et suivez nos instructions ainsi que nos recommendations pour bien débuter !
+            et de tout contrôler ? Alors n'attendez plus, et <mark class="surlignement">suivez nos instructions</mark> ainsi que nos recommendations pour bien débuter !
         </article>
 
         <div class="new"> <h1 class="etape"> Création d'un compte </h1> </div>
@@ -20,7 +20,7 @@
             <li> Deluxe = <strong> 1000 € </strong> par mois </li>
           </ul>
           Pour chaque <strong> pack d'abonnement </strong>, vous avez la possibilitée d'accéder à divers <strong> fonctionnalitées avancées </strong>.
-          Afin de gérer vos personnalisations <mark class="surlignement"> (changement de couleur, suppression ou ajout de musique)</mark> , vous disposerez d'une <strong> monnaie virtuelle </strong>. Suivant l'abonnement que vous prennez, vous disposerez de :
+          Afin de gérer vos personnalisations (changement de couleur, suppression ou ajout de musique) , vous disposerez d'une <strong> monnaie virtuelle </strong>. Suivant l'abonnement que vous prennez, vous disposerez de :
           <ul class="para3">
             <li> pack standard = <strong> 500 </strong> crédits </li>
             <li> pack premium = <strong> 800 </strong> crédits </li>
@@ -165,6 +165,7 @@ module.exports = {
   border: 1px solid black;
   background-color: black;
   padding: 5px;
+  text-align: center;
 }
 
 .para20 {
@@ -185,12 +186,18 @@ module.exports = {
   background-color: lightblue;
   border: 1px solid black;
   color:rgb(27, 82, 155);
+  width: 350px;
+  margin-left: 40px;
+  border-radius: 30px;
 }
 
 .para3 {
   background-color: lightblue;
   border: 1px solid black;
   color: rgb(27, 82, 155);
+  width: 350px;
+  margin-left: 350px;
+  border-radius: 30px;
 }
 
 .formulaire {
