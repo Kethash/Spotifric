@@ -1,20 +1,18 @@
 const Home = window.httpVueLoader('./components/Home.vue')
 const MainApp = window.httpVueLoader('./components/MainApp.vue')
 const Abonnement = window.httpVueLoader('./components/Abonnement.vue')
-const Session = window.httpVueLoader('./components/Session.vue')
-const Newcomer = window.httpVueLoader('./components/Newcomer.vue')
+const Fonctionnement = window.httpVueLoader('./components/Fonctionnement.vue')
 const Profil = window.httpVueLoader('./components/Profil.vue')
-const Ket = window.httpVueLoader('./components/ket.vue')
+const Musique = window.httpVueLoader('./components/Musique.vue')
 const Pay = window.httpVueLoader('./components/Pay.vue')
 
 const routes = [
   { path: '/', component: Home },
   { path: '/rejoindre', component: MainApp },
   { path: '/abonnement', component: Abonnement },
-  { path: '/session', component: Session },
-  { path: '/newcomer', component: Newcomer },
+  { path: '/fonctionnement', component: Fonctionnement },
   { path: '/profil', component: Profil },
-  { path: '/ket', component: Ket },
+  { path: '/musique', component: Musique },
   { path: '/pay', component: Pay },
 ]
 
