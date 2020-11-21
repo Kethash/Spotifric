@@ -4,11 +4,6 @@
       <div class="navigation">
         <nav class="sidebar">
           <h1>Playlists</h1>
-          <div v-for="playlist in this.playlists" :key="playlist.titre">
-            <div class="list" @click="change_list(playlist)">
-              {{ playlist.titre }}
-            </div>
-          </div>
 
           <button id="ajout" @click="show = !show" >Ajouter Musique </button>
 
@@ -23,7 +18,7 @@
             <input 
               type="text"
               placeholder="Lien de la musique (YouTube ou autre)"
-              v-model="add.link"
+              v-model="add.music"
               required
             />
 
@@ -37,19 +32,24 @@
             
 
           </form>
+
+          <button id="restore_btn" @click="restore()"> Restaurer </button>
         </nav>
 
         <nav class="display_list">
           <div
-            @click="play(box)"
             class="musicbox"
-            v-for="box in this.current_list"
+            v-for="box in this.playlists.musiques"
             :key="box.title"
           >
+          <div class="del_button" @click="remove(box)">X</div>
+          <div id="rest_box" @click="play(box)">
             <div>
               {{ box.title }}
             </div>
             <img :src="box.image" />
+          </div>
+            
           </div>
         </nav>
       </div>
@@ -145,19 +145,13 @@ module.exports = {
   props: {
     islogged: { type: Boolean },
     user: { type: Object },
-    playlists: { type: Array },
+    playlists: { type: Object },
     nowplaying: { type: Object },
     playing: { type: Boolean },
   },
 
   data() {
     return {
-      play_list: [],
-
-      current_list: [],
-
-      //nowPlaying: null,
-      //playing: false,
 
       file: "",
 
@@ -169,10 +163,6 @@ module.exports = {
         image: "",
       }
     };
-  },
-
-  async mounted() {
-    this.play_list = this.playlist;
   },
 
   methods: {
@@ -188,17 +178,18 @@ module.exports = {
       this.$emit('resume');
     },
 
-    change_list(playlist) {
-      this.current_list = playlist.contenu;
-    },
-
-    ajouterMusique() {
-      this.file = this.$refs.file.files[0];
-    },
-
     addmusique() {
       this.$emit('addmusique', this.add);
     },
+
+    remove(box) {
+      console.log(box.title)
+      this.$emit('remove', box.title);
+    },
+
+    restore() {
+      this.$emit('restore')
+    }
 
   },
 };
@@ -348,6 +339,39 @@ module.exports = {
 
 .musicbox:hover {
   border: 1px solid lightgreen;
+}
+
+#rest_box {
+  height: 100%;
+}
+
+#restore_btn{
+
+  margin-top: 50%;
+  height: 50px;
+  width: 80%;
+  color: white;
+  font-size: 20px;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+
+  background-color: rgb(80, 80, 80);
+
+  border: none;
+}
+
+.del_button {
+  font-size:15px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: black;
+  
+}
+
+.del_button:hover {
+  background-color: red;
+  border-top: 1px solid lightgreen;
+
 }
 
 .footer {
