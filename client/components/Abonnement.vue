@@ -7,15 +7,15 @@
       <div class="pricing__plan__header">
         <h1 class="pricing__plan__title">Standart</h1>
         <h2 class="pricing__plan__summary">
-          Pour ceux qui souhaite les fonctionanlites de base
+          Pour ceux qui souhaitent les fonctionnalitées de base
         </h2>
       </div>
 
       <div class="pricing__plan__description">
         <ul class="princing__plan__list">
-          <li class="pricing__plan__feature">Telecharger max 1000 musiques</li>
+          <li class="pricing__plan__feature">Télécharger max 1000 musiques</li>
           <li class="pricing__plan__feature">partez avec 500 credits</li>
-          <li class="pricing__plan__feature">ecouter la musique selectionnnée par l'aplication </li>
+          <li class="pricing__plan__feature">écouter la musique selectionnnée par l'application </li>
         </ul>
       </div>
 
@@ -34,16 +34,16 @@
       <div class="pricing__plan__header">
         <h1 class="pricing__plan__title">Deluxe</h1>
         <h2 class="pricing__plan__summary">
-          Pour ceux qui souhaite les fonctionanlites très avancées
+          Pour ceux qui souhaitent les fonctionnalitées très avancées
         </h2>
       </div>
 
       <div class="pricing__plan__description">
         <ul class="princing__plan__list">
-          <li class="pricing__plan__feature">Telecharger max 10000 musiques</li>
+          <li class="pricing__plan__feature">Télécharger max 10000 musiques</li>
           <li class="pricing__plan__feature">partez avec 1500 credits</li>
           <li class="pricing__plan__feature">ajouter vos musiques ou supprimez les</li>
-          <li class="pricing__plan__feature">changer votre fond d'ecran sur votre session SPOTIFRIC</li>
+          <li class="pricing__plan__feature">changer de couleur de fond sur votre espace compte</li>
         </ul>
       </div>
 
@@ -62,7 +62,7 @@
       <div class="pricing__plan__header">
         <h1 class="pricing__plan__title">Premium</h1>
         <h2 class="pricing__plan__summary">
-          Pour ceux qui souhaite quelques fonctionnalitées avancées 
+          Pour ceux qui souhaitent quelques fonctionnalitées avancées 
         </h2>
       </div>
 
@@ -70,7 +70,7 @@
         <ul class="princing__plan__list">
           <li class="pricing__plan__feature">Telecharger max 5000 musiques</li>
           <li class="pricing__plan__feature">partez avec 800 credits</li>
-          <li class="pricing__plan__feature"> ecouter votre propre musique </li>
+          <li class="pricing__plan__feature"> écouter votre propre musique </li>
         </ul>
       </div>
 
@@ -99,6 +99,7 @@ module.exports = {
 </script>
 
 <style scoped>
+
 .pricing__plan {
   width: 300px;
   border-radius: 25px;
@@ -107,7 +108,9 @@ module.exports = {
   font-family: "Arial", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #555555;
+  font-weight: bold;
+  background: #11CC5B;
+  color: rgb(31, 111, 138);
   margin: 15px;
 }
 
@@ -165,13 +168,14 @@ module.exports = {
 
 .pricing__plan__button {
   display: inline-block;
+  text-align: center;
   margin: 15px auto;
   padding: 8px 20px;
   text-decoration: none;
   color: #009578;
   background: white;
   border-radius: 5px;
-  border: 1px solid #009578;
+  border: 2px solid #009578;
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
@@ -185,7 +189,7 @@ module.exports = {
   margin: 0;
   text-align: center;
   font-size: 2em;
-  color: black;
+  color: cyan;
 }
 
 .pricing__plan__text {

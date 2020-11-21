@@ -5,13 +5,25 @@
 
       <div class="content">
         <em>
-          Le seul et unique endroit ou vous pouvez <br />
-          vous plonger dans un monde rempli de musiques <br />
-          venez decouvrir plus de 10000 titres pour tous les gouts...
+          Bienvenue sur <strong class="spoti">$ Spotifric $</strong> ! <br />
+          Le <strong class="spoti2">seul</strong> et
+          <strong class="spoti2">unique</strong> endroit ou vous pouvez <br />
+          vous plonger dans un monde rempli d'argent et de musiques. Venez
+          découvrir un univers musical entièrement
+          <strong class="spoti2">personnalisable</strong>, pour tous les
+          goûts...
         </em>
       </div>
       <div class="venez" @click="rejoindre">Rejoignez Nous</div>
-      <div class="image"> </div>
+      <div class="image"></div>
+      <br />
+      <br />
+      <footer>
+        <p>
+          © 2020 Victor Goetschy - Kétessar Tan, $ Spotifric $ All rigth
+          reserved
+        </p>
+      </footer>
     </div>
 
     <div class="hero" v-if="registering">
@@ -76,14 +88,12 @@
             <input type="checkbox" class="chech-box" required />
             <span> J'accepte les termes et conditions </span>
           </div>
-          
+
           <button type="submit" class="continuer-btn">créer un compte</button>
         </form>
       </div>
     </div>
-    
   </div>
-  
 </template>
 
 <script>
@@ -271,7 +281,7 @@ img {
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  background-image: url('../ressources/images/cross.png');
+  background-image: url("../ressources/images/cross.png");
 }
 
 #close:hover {
@@ -322,8 +332,8 @@ span {
   align-items: center;
 }
 
-.image{
-  background-image: url('../ressources/images/tenor.gif');
+.image {
+  background-image: url("../ressources/images/tenor.gif");
   width: 2400px;
   height: 410px;
   animation: moveSlideshow 0.5s linear infinite;
@@ -332,9 +342,8 @@ span {
   position: fixed;
 }
 
-
 @keyframes moveSlideshow {
-  100% { 
+  100% {
     transform: translateX(-10%);
   }
 }
@@ -366,15 +375,22 @@ span {
 }
 
 footer {
-  bottom : 0;
+  bottom: 0;
   left: 0;
   position: fixed;
   width: 100%;
-  height: 50px;
-  background-color: black;
+  height: 22px;
+  background-color: #0c783a;
   color: white;
   display: flex;
   justify-content: center;
 }
 
+.spoti {
+  color: yellow;
+}
+
+.spoti2 {
+  color: #08622c;
+}
 </style>

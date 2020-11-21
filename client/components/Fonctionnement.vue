@@ -1,86 +1,130 @@
 <template>
-    <div class="container">
-        <div class="parallax">
-            <h1 class="etape"> Découvrir $Spotifric$ </h1>
-        </div>
-        <article class="para10">
-            Ce site est l'alter-égo du site officiel Spotify. Cependant, chez nous, vous entrez dans un
-            monde reservé aux riches. </br> </br>Sur cette page de présentation, vous retrouverez un <strong> TUTO </strong> 
-            pour comprendre comment fonctionne notre site reservé uniquement à l'élite ! </br> </br> Vous tardez d'écouter de la vraie musique, 
-            et de tout contrôler ? Alors n'attendez plus, et <mark class="surlignement">suivez nos instructions</mark> ainsi que nos recommendations pour bien débuter !
-        </article>
-
-        <div class="new"> <h1 class="etape"> Création d'un compte </h1> </div>
-        <article class="para20">
-          Pour commencer à vous familiariser avec Spotifric, il faut savoir que notre site est basé sur un système de partage de musique, mais de plus, 
-          vous avez le choix de pouvoir <mark class="surlignement">PERSONNALISER</mark> comme bon vous semble votre application. Notre site fonctionne avec un abonnement, 3 choix s'offrent à vous : 
-          <ul class="para2">
-            <li> Standart = <strong> 250 € </strong> mois </li>
-            <li> Premium = <strong> 500 € </strong> mois </li>
-            <li> Deluxe = <strong> 1000 € </strong> par mois </li>
-          </ul>
-          Pour chaque <strong> pack d'abonnement </strong>, vous avez la possibilitée d'accéder à divers <strong> fonctionnalitées avancées </strong>.
-          Afin de gérer vos personnalisations (changement de couleur, suppression ou ajout de musique) , vous disposerez d'une <strong> monnaie virtuelle </strong>. Suivant l'abonnement que vous prennez, vous disposerez de :
-          <ul class="para3">
-            <li> pack standard = <strong> 500 </strong> crédits </li>
-            <li> pack premium = <strong> 800 </strong> crédits </li>
-            <li> pack deluxe  = <strong> 1500 </strong> crédits </li>
-          </ul> 
-        </article>
-
-        <div class="second"> <h1 class="etape"> Enjoy ! </h1>
-        </div>
-        <article class="para30">
-            Vous voilà maintenant près à découvrir notre nouvelle application de streaming 
-            révolutionnair ! Vous pouvez dès à présent vous connecter, accéder a votre session
-            via n'importe quel appareil, et écouter <mark class="surlignement"> 24H/7j</mark> la musique a fond !
-            A vous de jouer !
-            </br>
-            </br>
-            Si vous avez la moindre question concernant l'application, ou si un bug parvient, 
-            nous vous prions de bien vouloir <mark class="surlignement">contacter le service client</mark>  remplissant votre email, et un texte explicant votre probleme, dans le formulaire ci-dessous. 
-            Nous vous remercions pour votre confiance, ENJOY !!
-            </br>
-            </br>
-            <fieldset class="formulaire">
-                <legend> Un problème rencontré ? </legend>
-                <form>
-                    <div>
-                        <label for="Pseudo"> Pseudo </label>  
-                        <input type="text" placeholder="efrei94" maxlenght="15" autocomplete="off" required>
-                    </div> 
-                    <div>
-                        <label for="Note"> email </label>
-                        <input type="email" placeholder="email@spotifric.com" required>
-                    </div>
-                    <div>
-                        <label for="commentaire"> Veuillez nous indiquer le probleme rencontré </label>
-                         <select name="spotifric" id="spotifric">
-                           <option value="choisir"> séléctionner </option>
-                           <optgroup label="Problème de musique">
-                              <option value="Ne se lance pas"> La musique ne se lance pas</option>
-                              <option value="arret intempestif">La musique s'arrete brusquement</option>
-                           </optgroup>
-                           <optgroup label="Problème abonnement">
-                              <option value="Mauvais abonnement pris"> Je souhaite changer d'abonnement</option>
-                              <option value="problème pack"> Je ne parviens pas à payer de pack </option>
-                              <option value="trop cher"> Je veux résilier mon abonnement </option>
-                           </optgroup>
-                           <optgroup label="Problème fonctionnalitées">
-                              <option value="La couleur ne change pas"> Je n'arrive pas à changer la couleur</option>
-                              <option value="Mes crédits ne se mettent pas à jour"> Mes crédits ne sont pas à jour </option>
-                           </optgroup>
-                          </select>
-                          </br>
-                        <textarea type="text" required rows="4" cols="70" autofocus></textarea>
-                    </div>
-                    <div>
-                        <input type="submit" value="envoyer"/>
-                    </div>
-                </form>
-            </fieldset>
-        </article>
+  <div class="container">
+    <div class="parallax">
+      <h1 class="etape">Découvrir $Spotifric$</h1>
     </div>
+    <article class="para10">
+      Ce site est l'alter-égo du site officiel Spotify. Cependant, chez nous,
+      vous entrez dans un monde reservé aux riches. <br />
+      <br />Sur cette page de présentation, vous retrouverez un
+      <strong> TUTO </strong> pour comprendre comment fonctionne notre site
+      reservé uniquement aux plus riches ! <br />
+      <br />
+      Vous tardez d'écouter de la vraie musique, et de tout contrôler ? Alors
+      n'attendez plus, et
+      <mark class="surlignement">suivez nos instructions</mark> ainsi que nos
+      <mark class="surlignement">recommendations</mark> pour bien débuter !
+    </article>
+
+    <div class="new"><h1 class="etape">Création d'un compte</h1></div>
+    <article class="para20">
+      Pour commencer à vous familiariser avec Spotifric, il faut savoir que
+      notre site est basé sur un système de partage de musique, mais de plus,
+      vous avez le choix de pouvoir
+      <mark class="surlignement">personnaliser</mark> comme bon vous semble
+      votre application. Notre site fonctionne avec un abonnement, 3 choix
+      s'offrent à vous :
+      <ul class="para2">
+        <li>Standart = <strong> 250 € </strong> mois</li>
+        <li>Premium = <strong> 500 € </strong> mois</li>
+        <li>Deluxe = <strong> 1000 € </strong> par mois</li>
+      </ul>
+      Pour chaque <strong> pack d'abonnement </strong>, vous avez la
+      possibilitée d'accéder à divers
+      <strong> fonctionnalitées avancées </strong>. Afin de gérer vos
+      personnalisations (changement de couleur, suppression ou ajout de musique)
+      , vous disposerez d'une <strong> monnaie virtuelle </strong>. Suivant
+      l'abonnement que vous prennez, vous disposerez de :
+      <ul class="para3">
+        <li>pack standard = <strong> 500 </strong> crédits</li>
+        <li>pack premium = <strong> 800 </strong> crédits</li>
+        <li>pack deluxe = <strong> 1500 </strong> crédits</li>
+      </ul>
+    </article>
+
+    <div class="second"><h1 class="etape">Enjoy !</h1></div>
+    <article class="para30">
+      Vous voilà maintenant prêt à découvrir notre nouvelle application de
+      streaming révolutionnaire ! Vous pouvez dès à présent vous connecter,
+      accéder à votre session via n'importe quel appareil, et écouter
+      <mark class="surlignement"> 24H/7j</mark> votre musique à fond ! A vous de
+      jouer !
+      <br />
+      <br />
+      <br />
+      <h2>!! Remarque aux utilisateurs !!</h2>
+      Si avez la moindre question concernant l'application, ou si un bug
+      parvient, nous vous prions de bien vouloir
+      <mark class="surlignement">contacter le service client</mark> en
+      remplissant votre email, et un texte explicant votre probleme, dans le
+      formulaire ci-dessous. Nous vous remercions pour votre confiance, ENJOY !!
+    </article>
+    <br />
+    <br />
+    <fieldset class="formulaire">
+      <legend>Un problème rencontré ?</legend>
+      <form>
+        <div>
+          <label for="Pseudo"> Pseudo </label>
+          <input
+            type="text"
+            placeholder="efrei94"
+            maxlenght="15"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <div>
+          <label for="Note"> email </label>
+          <input type="email" placeholder="email@spotifric.com" required />
+        </div>
+        <div>
+          <label for="commentaire">
+            Veuillez nous indiquer le problème en question :
+          </label>
+          <select name="spotifric" id="spotifric">
+            <option value="choisir">séléctionner</option>
+            <optgroup label="Problème de musique">
+              <option value="Ne se lance pas">
+                La musique ne se lance pas
+              </option>
+              <option value="arret intempestif">
+                La musique s'arrête brusquement
+              </option>
+            </optgroup>
+            <optgroup label="Problème d'abonnement">
+              <option value="Mauvais abonnement pris">
+                Je souhaite changer d'abonnement
+              </option>
+              <option value="problème pack">
+                Je ne parviens pas à payer de pack
+              </option>
+              <option value="trop cher">Je veux résilier mon abonnement</option>
+            </optgroup>
+            <optgroup label="Problème de fonctionnalitées">
+              <option value="La couleur ne change pas">
+                Je n'arrive pas à changer la couleur
+              </option>
+              <option value="Mes crédits ne se mettent pas à jour">
+                Mes crédits ne sont pas à jour
+              </option>
+            </optgroup>
+          </select>
+          <br />
+          <textarea
+            type="text"
+            required
+            rows="4"
+            cols="70"
+            autofocus
+          ></textarea>
+        </div>
+        <div>
+          <input type="submit" value="envoyer" />
+        </div>
+      </form>
+    </fieldset>
+  </div>
 </template>
 
 <script>
@@ -143,7 +187,7 @@ module.exports = {
 .etape {
   position: absolute;
 
-  color:  #0c7639;
+  color: #0c7639;
   background: white;
   border: 1px solid black;
   border-radius: 10px;
@@ -185,7 +229,7 @@ module.exports = {
 .para2 {
   background-color: lightblue;
   border: 1px solid black;
-  color:rgb(27, 82, 155);
+  color: rgb(27, 82, 155);
   width: 350px;
   margin-left: 40px;
   border-radius: 30px;
@@ -205,14 +249,21 @@ module.exports = {
   background-color: rgb(27, 82, 155);
 }
 
-legend{
+legend {
   background: lightblue;
   font-weight: bold;
   border-radius: 10px;
   color: red;
 }
 
-.surlignement{
+.surlignement {
   background: cyan;
+}
+
+h2 {
+  color: white;
+  background: red;
+  width: 500px;
+  text-align: center;
 }
 </style>
