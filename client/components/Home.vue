@@ -1,12 +1,6 @@
 <template>
   <div>
     <div class="main">
-      <!--
-    <div class="Astronomia">
-      <img src="coffin_dance.jpg" alt="" />
-    </div>
-    -->
-
       <div class="hd">Achetez la musique</div>
 
       <div class="content">
@@ -18,9 +12,6 @@
       </div>
       <div class="venez" @click="rejoindre">Rejoignez Nous</div>
       <div class="image"> </div>
-      <footer>
-        <p> ceci est le footer </p>
-      </footer>
     </div>
 
     <div class="hero" v-if="registering">
@@ -152,7 +143,6 @@ module.exports = {
 </script>
 
 <style scoped>
-
 .main {
   margin-left: 5%;
   margin-right: 25%;
@@ -386,4 +376,5 @@ footer {
   display: flex;
   justify-content: center;
 }
+
 </style>
