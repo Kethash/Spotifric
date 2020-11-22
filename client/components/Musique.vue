@@ -34,6 +34,32 @@
           </form>
 
           <button id="restore_btn" @click="restore()"> Restaurer </button>
+
+          <form @submit.prevent="modifier" id="addForm" v-if="selected">
+
+            <input 
+              type="text"
+              placeholder="titre"
+              v-model="add.title"
+              required
+            />
+            <input 
+              type="text"
+              placeholder="Lien de la musique (YouTube ou autre)"
+              v-model="add.music"
+              required
+            />
+
+            <input 
+              type="text"
+              placeholder="Lien de l'image (optionnel)"
+              v-model="add.image"
+            />
+
+            <button type="submit">Modifier</button>
+            
+
+          </form>
         </nav>
 
         <nav class="display_list">
@@ -161,12 +187,23 @@ module.exports = {
         title: "",
         music: "",
         image: "",
-      }
+      }, 
+
+      enCours : {
+        title: "",
+        music: "",
+        image: "",
+      },
+
+      selected: false,
     };
   },
 
   methods: {
     play(audio) {
+      this.enCours = audio;
+      this.add = audio;
+      this.selected = true;
       this.$emit('play', audio);
     },
 
@@ -189,6 +226,11 @@ module.exports = {
 
     restore() {
       this.$emit('restore')
+    },
+
+    modifier() {
+
+      this.$emit('modify', this.add, this.enCours);
     }
 
   },
@@ -347,7 +389,7 @@ module.exports = {
 
 #restore_btn{
 
-  margin-top: 50%;
+  margin-top: 10%;
   height: 50px;
   width: 80%;
   color: white;

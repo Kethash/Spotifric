@@ -157,20 +157,14 @@ var app = new Vue({
 
   async addmusique(add) {
 
-    const newMusic = {
-      title: add.title,
-      music: add.music,
-      image: add.image,
-    };
-
-    this.playlists["musiques"].push(add);
-
-    const list = this.playlists
-
     //console.log(list);
 
+    const title = add.title;
+    const music = add.music;
+    const image = add.image;
+
     try {
-      await axios.post('/api/upload', {list});
+      await axios.post('/api/upload', {title, music, image});
       const res2 = await axios.get('/api/user/playlists');
       this.playlists = res2.data.data;
 
@@ -181,7 +175,7 @@ var app = new Vue({
 
   async removemusic(box) {
     this.playlists.musiques.splice(this.playlists.musiques.indexOf(box),1)
-    await axios.delete('/api/playlist/' + box.title);
+    await axios.delete('/api/user/playlists/' + box.title);
     const res2 = await axios.get('/api/user/playlists');
     this.playlists = res2.data.data;
   },
@@ -189,7 +183,7 @@ var app = new Vue({
   async restore() {
     this.playlists = this.exemple_playlist;
     const playlist = this.playlists;
-    await axios.put('/api/user/playlist', {playlist});
+    await axios.put('/api/user/playlists', {playlist});
     const res2 = await axios.get('/api/user/playlists');
     this.playlists = res2.data.data;
 
@@ -197,6 +191,23 @@ var app = new Vue({
 
   async ipay(money){
     const res = await axios.put('/api/pay', {money});
+
+  },
+
+  async modifierMusique(box, past_box) {
+
+
+    //console.log(box);
+
+    const title = box.title;
+    const music = box.music;
+    const image = box.image;
+
+
+    numero = this.playlists.musiques.findIndex(x => (x.title == past_box.title && x.music == past_box.music));
+
+
+    await axios.put('/api/user/setbox/' + numero, {title, music, image});
 
   }
   
