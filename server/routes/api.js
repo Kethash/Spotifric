@@ -12,8 +12,8 @@ const { defaultMaxListeners } = require('stream');
 const client = new Client({
   user: 'postgres',
   host: 'localhost',
-  password: 'lolipop1',
-  database: 'projet'
+  password: 'Cabourg14390',
+  database: 'projetvuevk'
 })
 
 client.connect();
