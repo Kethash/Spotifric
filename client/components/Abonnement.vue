@@ -43,7 +43,7 @@
           <li class="pricing__plan__feature">Télécharger max 10000 musiques</li>
           <li class="pricing__plan__feature">partez avec 1500 credits</li>
           <li class="pricing__plan__feature">ajouter vos musiques ou supprimez les</li>
-          <li class="pricing__plan__feature">changer de couleur de fond sur votre espace compte</li>
+          <li class="pricing__plan__feature">Modifier le nom ou l'image de vos musiques téléchargées dans votre playlist </li>
         </ul>
       </div>
 

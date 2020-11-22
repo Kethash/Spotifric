@@ -100,7 +100,7 @@
               </optgroup>
               <optgroup label="Problème de fonctionnalitées">
                 <option value="La couleur ne change pas">
-                  Je n'arrive pas à changer la couleur
+                  Je n'arrive pas à changer de nom/image
                 </option>
                 <option value="Mes crédits ne se mettent pas à jour">
                   Mes crédits ne sont pas à jour
