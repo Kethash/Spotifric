@@ -12,8 +12,8 @@ const { defaultMaxListeners } = require('stream');
 const client = new Client({
   user: 'postgres',
   host: 'localhost',
-  password: 'Cabourg14390',
-  database: 'projetvuevk'
+  password: 'lolipop1',
+  database: 'projet'
 })
 
 client.connect();
@@ -183,9 +183,17 @@ router.post('/ytdownload', (req, res) => {
 })
 
 
-router.post('/upload', (req, res) => {
+router.post('/upload', async (req, res) => {
 
   const UserId = req.session.userId;
+
+
+
+  let new_music = {
+    title: req.body.title,
+    music: req.body.music,
+    image: req.body.image
+  }
 
   //console.log(req.body.list);
 
@@ -195,19 +203,30 @@ router.post('/upload', (req, res) => {
     res.status(404).json({ message: "User not found !" });
   } else {
 
-    async function add(list, UserId) {
-      const sql = "UPDATE users SET playlists=$1 WHERE id=$2";
+    try {
+
+      console.log(req.session.playlists);
+
+      let playlist = req.session.playlists;
+
+      req.session.playlists.musiques.push(new_music)
+      const sql = "UPDATE users SET playlists=$1 WHERE id=$2 RETURNING *";
       const new_playlist = await client.query({
         text: sql,
-        values: [list, UserId]
+        values: [playlist, UserId]
       })
 
+      //console.log(new_playlist.rows[0]);
+      console.log(req.session.playlists);
+
+      req.session.playlists = new_playlist.rows[0].playlists;
+
       res.status(200).json({ message: 'La playlist a bien été ajoutée', data: new_playlist })
+    } catch (err) {
+      res.status(502).json({ err })
     }
 
-    add(req.body.list, UserId);
   }
-
 })
 
 router.get('/user/playlists', (req, res) => {
@@ -222,6 +241,14 @@ router.get('/user/playlists', (req, res) => {
       text: sql,
       values: [userID],
     })
+
+    playlists = data.rows[0].playlists;
+
+    req.session.playlists = playlists;
+
+    //console.log(req.session.playlists);
+
+
 
 
     res.status(200).json({ message: 'Playlist gathered !', data: data.rows[0].playlists });
@@ -239,22 +266,53 @@ router.get('/user/playlists', (req, res) => {
 
 })
 
-router.delete('/playlist/:nom', (req, res) => {
+
+router.get('/user/playlists/:nom', async (req, res) => {
 
   const titre = req.params.nom;
   const userID = req.session.userId;
 
-  async function deleter(titre) {
+  //console.log(req.session.playlists);
 
-    //On récupère toutes les musiques de la playlist de l'utilisateur
+  if (!userID) {
+    res.status(404).json({ message: 'Utilisateur introuvable !' })
+  } else {
 
-    let playlists = await client.query({
+    try {
+      const table = await client.query({
+        text: `SELECT value
+      FROM users u, json_array_elements(u.playlists->'musiques') obj 
+      WHERE (obj->>'title' = $1 AND id=$2);`,
+        values: [titre, userID]
+      })
+
+      const recup = table.rows[0].value;
+
+      res.status(200).json({ recup });
+    } catch (err) {
+      res.status(401).json({ message: 'Erreur, titre introuvable !' })
+    }
+
+  }
+
+
+
+})
+
+router.delete('/user/playlists/:nom', async (req, res) => {
+
+  const titre = req.params.nom;
+  const userID = req.session.userId;
+  if (userID) {
+    let initial_playlist = await client.query({
       text: `SELECT playlists
       FROM users where id=$1;`,
       values: [userID]
     })
 
-    playlists = playlists.rows[0].playlists;
+    playlists = initial_playlist.rows[0].playlists;
+
+    req.session.playlists = playlists;
 
     //On récupère ce que l'utilisateur veut supprimer
     const table = await client.query({
@@ -268,32 +326,32 @@ router.delete('/playlist/:nom', (req, res) => {
 
     index = playlists.musiques.findIndex(x => (x.title == recup.title && x.music == recup.music));
 
-    playlists.musiques.splice(index,1)
-    console.log(index);
+    playlists.musiques.splice(index, 1)
+    //console.log(index);
 
-    //console.log(playlists.musiques);
+    req.session.playlists = playlists;
+
+    //console.log(req.session.playlists);
 
     const t_updated = await client.query({
-      text: `UPDATE users SET playlists=$1 WHERE id=$2`,
+      text: `UPDATE users SET playlists=$1 WHERE id=$2 RETURNING *`,
       values: [playlists, userID]
     })
 
+    console.log(t_updated.rows[0].playlists);
 
-    res.status(200).json({ message: 'Trouvé !', data: {recup,playlists} });
+    req.session.playlists = t_updated.rows[0].playlists;
 
-  }
-
-  if(userID) {
-    deleter(titre);
+    res.status(200).json({ message: 'Trouvé !', data: { recup, playlists } });
   } else {
-    res.status(404).json({message: 'User not found !'});
+    res.status(404).json({ message: 'User not found !' });
   }
 
-  
+
 
 })
 
-router.put('/user/playlist', (req,res) => {
+router.put('/user/playlists', (req, res) => {
   const userID = req.session.userId;
 
   const playlists = req.body.playlist;
@@ -304,32 +362,84 @@ router.put('/user/playlist', (req,res) => {
       text: `UPDATE users SET playlists=$1 WHERE id=$2`,
       values: [playlists, userID]
     })
-  
-    res.status(200).json({ message: 'YES !'})
 
-  } catch(err) {
-    res.status(404).json({ message: 'FAIL !'});
+    res.status(200).json({ message: 'YES !' })
+
+  } catch (err) {
+    res.status(404).json({ message: 'FAIL !' });
   }
-  
+
 
 })
 
-router.put('/pay', async (req,res) => {
+router.put('/pay', async (req, res) => {
   const userID = req.session.userId;
   const money = req.body.money;
 
   try {
     const argent = await client.query({
       text: "UPDATE users SET money=$1 WHERE id=$2 RETURNING money",
-      values:[money, userID]
+      values: [money, userID]
     })
 
     console.log(argent.rows[0]);
 
-    res.status(200).json({message: 'Votre argent a bien été débité', data: argent.rows[0]});
-  } catch(err) {
-    res.status(502).json({err});
+    res.status(200).json({ message: 'Votre argent a bien été débité', data: argent.rows[0] });
+  } catch (err) {
+    res.status(502).json({ err });
   }
+})
+
+router.put('/user/setbox/:id', async (req,res) => {
+  let title = req.body.title;
+  let music = req.body.music;
+  let image = req.body.image;
+
+  var index = req.params.id;
+
+  console.log(music);
+
+  const userID = req.session.userId;
+
+  if (userID) {
+    let initial_playlist = await client.query({
+      text: `SELECT playlists
+      FROM users where id=$1;`,
+      values: [userID]
+    })
+
+    playlists = initial_playlist.rows[0].playlists;
+
+    req.session.playlists = playlists;
+
+    let box = {
+      title : title,
+      music : music,
+      image : image,
+    };
+    
+
+    playlists.musiques[index] = box;
+    //console.log(index);
+
+    req.session.playlists = playlists;
+
+    //console.log(req.session.playlists);
+
+    const t_updated = await client.query({
+      text: `UPDATE users SET playlists=$1 WHERE id=$2 RETURNING *`,
+      values: [playlists, userID]
+    })
+
+    console.log(t_updated.rows[0].playlists);
+
+    req.session.playlists = t_updated.rows[0].playlists;
+
+    res.status(200).json({ message: 'Trouvé !', data: { playlists } });
+  } else {
+    res.status(404).json({ message: 'User not found !' });
+  }
+
 })
 
 module.exports = router
