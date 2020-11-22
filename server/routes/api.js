@@ -12,13 +12,8 @@ const { defaultMaxListeners } = require('stream');
 const client = new Client({
   user: 'postgres',
   host: 'localhost',
-<<<<<<< Updated upstream
-  password: 'azertyuiop',
-  database: 'projetvuevk'
-=======
   password: 'lolipop1',
   database: 'projet'
->>>>>>> Stashed changes
 })
 
 client.connect();
