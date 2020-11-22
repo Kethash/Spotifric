@@ -12,7 +12,7 @@ const { defaultMaxListeners } = require('stream');
 const client = new Client({
   user: 'postgres',
   host: 'localhost',
-  password: 'Cabourg14390',
+  password: 'azertyuiop',
   database: 'projetvuevk'
 })
 

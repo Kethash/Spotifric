@@ -1,4 +1,5 @@
 <template>
+
   <div class="main">
     <article class="left_panel">
       <div>Informations</div>
@@ -58,6 +59,7 @@ module.exports = {
 </script>
 
 <style scoped>
+
 .main {
   width: 100%;
   height: 800px;
