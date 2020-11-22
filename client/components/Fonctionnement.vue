@@ -11,19 +11,17 @@
       reservé uniquement aux plus riches ! <br />
       <br />
       Vous tardez d'écouter de la vraie musique, et de tout contrôler ? Alors
-      n'attendez plus, et
-      <mark class="surlignement">suivez nos instructions</mark> ainsi que nos
-      <mark class="surlignement">recommendations</mark> pour bien débuter !
+      n'attendez plus, et suivez nos instructions ainsi que nos recommendations
+      pour bien débuter !
     </article>
 
     <div class="new"><h1 class="etape">Création d'un compte</h1></div>
     <article class="para20">
       Pour commencer à vous familiariser avec Spotifric, il faut savoir que
       notre site est basé sur un système de partage de musique, mais de plus,
-      vous avez le choix de pouvoir
-      <mark class="surlignement">personnaliser</mark> comme bon vous semble
-      votre application. Notre site fonctionne avec un abonnement, 3 choix
-      s'offrent à vous :
+      vous avez le choix de pouvoir personnaliser comme bon vous semble votre
+      application. Notre site fonctionne avec un abonnement, 3 choix s'offrent à
+      vous :
       <ul class="para2">
         <li>Standart = <strong> 250 € </strong> mois</li>
         <li>Premium = <strong> 500 € </strong> mois</li>
@@ -46,84 +44,84 @@
     <article class="para30">
       Vous voilà maintenant prêt à découvrir notre nouvelle application de
       streaming révolutionnaire ! Vous pouvez dès à présent vous connecter,
-      accéder à votre session via n'importe quel appareil, et écouter
-      <mark class="surlignement"> 24H/7j</mark> votre musique à fond ! A vous de
-      jouer !
+      accéder à votre session via n'importe quel appareil, et écouter 24H/7j
+      votre musique à fond ! A vous de jouer !
       <br />
       <br />
       <br />
       <h2>!! Remarque aux utilisateurs !!</h2>
       Si avez la moindre question concernant l'application, ou si un bug
-      parvient, nous vous prions de bien vouloir
-      <mark class="surlignement">contacter le service client</mark> en
+      parvient, nous vous prions de bien vouloir contacter le service client en
       remplissant votre email, et un texte explicant votre probleme, dans le
-      formulaire ci-dessous. Nous vous remercions pour votre confiance, ENJOY !!
+      formulaire ci-dessous. Nous vous remercions pour votre confiance, ENJOY !
+      <br />
+      <br />
+      <fieldset class="formulaire">
+        <legend>Un problème rencontré ?</legend>
+        <form>
+          <div>
+            <label for="Pseudo"> Pseudo </label>
+            <input
+              type="text"
+              placeholder="efrei94"
+              maxlenght="15"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div>
+            <label for="Note"> email </label>
+            <input type="email" placeholder="email@spotifric.com" required />
+          </div>
+          <div>
+            <label for="commentaire">
+              Veuillez nous indiquer le problème en question :
+            </label>
+            <select name="spotifric" id="spotifric">
+              <option value="choisir">séléctionner</option>
+              <optgroup label="Problème de musique">
+                <option value="Ne se lance pas">
+                  La musique ne se lance pas
+                </option>
+                <option value="arret intempestif">
+                  La musique s'arrête brusquement
+                </option>
+              </optgroup>
+              <optgroup label="Problème d'abonnement">
+                <option value="Mauvais abonnement pris">
+                  Je souhaite changer d'abonnement
+                </option>
+                <option value="problème pack">
+                  Je ne parviens pas à payer de pack
+                </option>
+                <option value="trop cher">
+                  Je veux résilier mon abonnement
+                </option>
+              </optgroup>
+              <optgroup label="Problème de fonctionnalitées">
+                <option value="La couleur ne change pas">
+                  Je n'arrive pas à changer la couleur
+                </option>
+                <option value="Mes crédits ne se mettent pas à jour">
+                  Mes crédits ne sont pas à jour
+                </option>
+              </optgroup>
+            </select>
+            <br />
+            <textarea
+              type="text"
+              required
+              rows="4"
+              cols="70"
+              autofocus
+            ></textarea>
+          </div>
+          <div>
+            <input type="submit" value="envoyer" />
+          </div>
+        </form>
+      </fieldset>
     </article>
-    <br />
-    <br />
-    <fieldset class="formulaire">
-      <legend>Un problème rencontré ?</legend>
-      <form>
-        <div>
-          <label for="Pseudo"> Pseudo </label>
-          <input
-            type="text"
-            placeholder="efrei94"
-            maxlenght="15"
-            autocomplete="off"
-            required
-          />
-        </div>
-        <div>
-          <label for="Note"> email </label>
-          <input type="email" placeholder="email@spotifric.com" required />
-        </div>
-        <div>
-          <label for="commentaire">
-            Veuillez nous indiquer le problème en question :
-          </label>
-          <select name="spotifric" id="spotifric">
-            <option value="choisir">séléctionner</option>
-            <optgroup label="Problème de musique">
-              <option value="Ne se lance pas">
-                La musique ne se lance pas
-              </option>
-              <option value="arret intempestif">
-                La musique s'arrête brusquement
-              </option>
-            </optgroup>
-            <optgroup label="Problème d'abonnement">
-              <option value="Mauvais abonnement pris">
-                Je souhaite changer d'abonnement
-              </option>
-              <option value="problème pack">
-                Je ne parviens pas à payer de pack
-              </option>
-              <option value="trop cher">Je veux résilier mon abonnement</option>
-            </optgroup>
-            <optgroup label="Problème de fonctionnalitées">
-              <option value="La couleur ne change pas">
-                Je n'arrive pas à changer la couleur
-              </option>
-              <option value="Mes crédits ne se mettent pas à jour">
-                Mes crédits ne sont pas à jour
-              </option>
-            </optgroup>
-          </select>
-          <br />
-          <textarea
-            type="text"
-            required
-            rows="4"
-            cols="70"
-            autofocus
-          ></textarea>
-        </div>
-        <div>
-          <input type="submit" value="envoyer" />
-        </div>
-      </form>
-    </fieldset>
   </div>
 </template>
 
@@ -190,6 +188,7 @@ module.exports = {
   color: #0c7639;
   background: white;
   border: 1px solid black;
+  padding: 10px;
   border-radius: 10px;
   font-style: normal;
   font-weight: bold;
@@ -205,30 +204,26 @@ module.exports = {
 }
 
 .para10 {
-  color: lightyellow;
-  border: 1px solid black;
-  background-color: black;
-  padding: 5px;
+  color: black;
+  background-color: #f5f5f5;
+  padding: 10px;
   text-align: center;
 }
 
 .para20 {
-  border: 1px solid black;
-  background-color: black;
-  color: lightyellow;
-  padding: 5px;
+  color: black;
+  background-color: #f5f5f5;
+  padding: 10px;
 }
 
 .para30 {
-  border: 1px solid black;
-  background-color: black;
-  color: lightyellow;
-  padding: 5px;
+  color: black;
+  background-color: #f5f5f5;
+  padding: 10px;
 }
 
 .para2 {
   background-color: lightblue;
-  border: 1px solid black;
   color: rgb(27, 82, 155);
   width: 350px;
   margin-left: 40px;
@@ -246,14 +241,14 @@ module.exports = {
 
 .formulaire {
   color: white;
-  background-color: rgb(27, 82, 155);
+  background-color: lightblue;
 }
 
 legend {
-  background: lightblue;
+  background: rgb(27, 82, 155);
   font-weight: bold;
   border-radius: 10px;
-  color: red;
+  color: white;
 }
 
 .surlignement {
@@ -264,6 +259,6 @@ h2 {
   color: white;
   background: red;
   width: 500px;
-  text-align: center;
+  justify-content: center;
 }
 </style>
