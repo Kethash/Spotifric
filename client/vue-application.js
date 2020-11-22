@@ -20,6 +20,8 @@ const router = new VueRouter({
   routes
 })
 
+Vue.component('pay-compo', Pay )
+
 
 var app = new Vue({
   router,
@@ -29,6 +31,7 @@ var app = new Vue({
     user: {
       username: "",
       email: "",
+      money: 0,
     },
 
     logged_out: false,
@@ -57,6 +60,7 @@ var app = new Vue({
   if(res) {
     this.user.username = res.data.username;
     this.user.email = res.data.email;
+    this.user.money = res.data.money;
     this.islogged = true;
   }
 
@@ -81,13 +85,15 @@ var app = new Vue({
       this.islogged = true;
       const res2 = await axios.get('/api/user/playlists');
       this.playlists = res2.data.data;
+      this.user.username = res.data.username;
+      this.user.email = res.data.email;
+      this.user.money = res.data.money;
 
     } else {
       this.logged_out = false;
       this.islogged = false;
     }
-    this.user.username = res.data.username;
-    this.user.email = res.data.email;
+    
 
   },
 
@@ -186,6 +192,11 @@ var app = new Vue({
     await axios.put('/api/user/playlist', {playlist});
     const res2 = await axios.get('/api/user/playlists');
     this.playlists = res2.data.data;
+
+  },
+
+  async ipay(money){
+    const res = await axios.put('/api/pay', {money});
 
   }
   

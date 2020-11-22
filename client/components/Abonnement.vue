@@ -22,7 +22,7 @@
       <div class="pricing__plan__actions">
         <p class="pricing__plan__cost">250 €</p>
         <p class="pricing__plan__text">Par mois</p>
-        <router-link to='/pay' class="pricing__plan__button"> Acheter ce pack </router-link>
+        <div class="pricing__plan__button" @click="payer(1)"> Acheter ce pack </div>
         <p class="princing__plan__text">Soit 3000€ par ans au minimum</p>
       </div>
     </section>
@@ -50,7 +50,7 @@
       <div class="pricing__plan__actions">
         <p class="pricing__plan__cost">1000 €</p>
         <p class="pricing__plan__text">Par mois</p>
-        <router-link to='/pay' class="pricing__plan__button"> Acheter ce pack </router-link>
+        <div class="pricing__plan__button" @click="payer(2)"> Acheter ce pack </div>
         <p class="princing__plan__text">Soit 12000€ par ans au minimum</p>
       </div>
     </section>
@@ -77,24 +77,70 @@
       <div class="pricing__plan__actions">
         <p class="pricing__plan__cost">500 €</p>
         <p class="pricing__plan__text">Par mois</p>
-        <router-link to="/pay" class="pricing__plan__button"> Acheter ce pack </router-link>
+        <div class="pricing__plan__button" @click="payer(3)" > Acheter ce pack </div>
         <p class="princing__plan__text">Soit 6000€ par ans au minimum</p>
       </div>
     </section>
+
+    <pay-compo class="finalPay" v-if="depense" v-on:test="confirmer"></pay-compo>
   </div>
 </template>
 
 <script>
 module.exports = {
   props: {
-        islogged: { type: Boolean }
+      islogged: { type: Boolean },
+      user: { type: Object },
     },
     
   data() {
-    return {};
+    return {
+      depense: false,
+      typeAbo : 0,
+    };
   },
 
-  methods: {},
+  methods: {
+    payer(Abo) {
+      this.depense = true;
+      this.typeAbo = Abo;
+      
+    },
+
+    confirmer() {
+      this.depense = false;
+      const moni = this.user.money;
+      switch(this.typeAbo) {
+        case 1:
+          if (moni - 250 < 0)
+          {
+            alert("T'as plus de fric !");
+          } else {
+            this.user.money -= 250;
+          }
+          
+          break;
+        case 2:
+          if (moni - 1000 < 0)
+          {
+            alert("T'as plus de fric !");
+          } else {
+            this.user.money -= 1000;
+          }
+          break;
+        case 3:
+          if (moni - 500 < 0)
+          {
+            alert("T'as plus de fric !");
+          } else {
+            this.user.money -= 500;
+          }
+          break;
+      }
+      
+      this.$emit('ipay', this.user.money);
+    }
+  },
 };
 </script>
 
@@ -218,6 +264,10 @@ module.exports = {
   justify-content: center;
   padding: 10px;
   margin-top: 80px;
+}
+
+.finalPay{
+  position: fixed;
 }
 </style>
 
