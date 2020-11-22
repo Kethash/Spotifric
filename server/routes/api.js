@@ -18,6 +18,13 @@ const client = new Client({
 
 client.connect();
 
+
+let playlists = {
+  "musiques": []
+}
+
+
+
 router.post('/register', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
@@ -47,9 +54,13 @@ router.post('/register', (req, res) => {
     else {
       const hash = await bcrypt.hash(password, 10);
 
+      let playlists = {
+        "musiques": []
+      }
+
       client.query({
-        text: "INSERT INTO users(username, email, password, money) VALUES ($1,$2,$3,$4);",
-        values: [username, email, hash, 1500]
+        text: "INSERT INTO users(username, email, password, money, playlists) VALUES ($1,$2,$3,$4,$5);",
+        values: [username, email, hash, 1500, playlists]
       })
 
       res.status(200).json({ message: 'SUCCESS !' })
@@ -106,7 +117,7 @@ router.get('/me', (req, res) => {
 
   async function whoAmI(userId) {
     const checkUser = await client.query({
-      text: "SELECT username, email FROM users WHERE id=$1 LIMIT 1",
+      text: "SELECT username, email, money FROM users WHERE id=$1 LIMIT 1",
       values: [userId],
     })
 
@@ -118,7 +129,8 @@ router.get('/me', (req, res) => {
       const Username = checkUser.rows[0].username;
       req.session.username = Username;
       req.session.email = checkUser.rows[0].email;
-      res.status(200).json({ message: `Vous êtes : ${Username}`, username: Username, email: req.session.email });
+      req.session.money = checkUser.rows[0].money;
+      res.status(200).json({ message: `Vous êtes : ${Username}`, username: Username, email: req.session.email, money: req.session.money });
       return
     }
 
@@ -175,9 +187,9 @@ router.post('/upload', (req, res) => {
 
   const UserId = req.session.userId;
 
-  console.log(req.body.list);
+  //console.log(req.body.list);
 
-  console.log(req.session.userId);
+  //console.log(req.session.userId);
 
   if (!UserId) {
     res.status(404).json({ message: "User not found !" });
@@ -300,6 +312,24 @@ router.put('/user/playlist', (req,res) => {
   }
   
 
+})
+
+router.put('/pay', async (req,res) => {
+  const userID = req.session.userId;
+  const money = req.body.money;
+
+  try {
+    const argent = await client.query({
+      text: "UPDATE users SET money=$1 WHERE id=$2 RETURNING money",
+      values:[money, userID]
+    })
+
+    console.log(argent.rows[0]);
+
+    res.status(200).json({message: 'Votre argent a bien été débité', data: argent.rows[0]});
+  } catch(err) {
+    res.status(502).json({err});
+  }
 })
 
 module.exports = router

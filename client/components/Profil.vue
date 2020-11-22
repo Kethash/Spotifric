@@ -2,6 +2,8 @@
   <div class="main">
     <article class="left_panel">
       <div>Informations</div>
+
+      <div id="moneymoneymoney">Argent : {{ this.user.money }} $</div>
     </article>
     <article class="right_panel">
 
@@ -64,6 +66,7 @@ module.exports = {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  min-width: 830px;
 }
 
 button {
@@ -108,6 +111,10 @@ article {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 340px;
+    user-select: none; /* Permet de ne pas sélectionner le texte */
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 
 .right_panel {
@@ -116,6 +123,7 @@ article {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 530px;
 }
 
 .left_panel div {
@@ -123,9 +131,6 @@ article {
     text-align: center;
 }
 
-.left_panel div:hover {
-    color: rgb(103, 238, 103);
-}
 
 .rp_content {
     width: 100%;
@@ -164,5 +169,18 @@ input:focus {
   outline: none;
   border-bottom: 0.2px solid rgb(99, 255, 99);
   transition: 0.2s;
+}
+
+#moneymoneymoney {
+  margin-top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-size: 30px;
+  
 }
 </style>

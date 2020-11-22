@@ -1,15 +1,15 @@
 <template>
   <div class="wrapper">
     <h2>récapitulatif de paiment</h2>
-    <form method="POST">
+    <form @submit.prevent="test">
       <h4>compte</h4>
       <div class="input-group">
         <div class="input-box">
-          <input type="text" placeholder="nom" required class="nom" />
+          <input type="text" placeholder="nom" class="nom" />
           <i class="fa fa-user icon"></i>
         </div>
         <div class="input-box">
-          <input type="text" placeholder="Prenom" required class="nom" />
+          <input type="text" placeholder="Prenom" class="nom" />
           <i class="fa fa-user icon"></i>
         </div>
       </div>
@@ -18,7 +18,6 @@
           <input
             type="email"
             placeholder="adresse email"
-            required
             class="name"
           />
           <i class="fa fa-envelope icon"></i>
@@ -57,7 +56,6 @@
             type="tel"
             placeholder="Numéro de carte"
             maxlength="12"
-            required
             class="name"
           />
           <i class="fa fa-credit-card icon"></i>
@@ -69,7 +67,6 @@
             type="tel"
             placeholder="CVC"
             maxlength="3"
-            required
             class="name"
           />
           <i class="fa fa-user icon"></i>
@@ -97,6 +94,27 @@
     </form>
   </div>
 </template>
+
+<script>
+module.exports = {
+  props: {
+      islogged: { type: Boolean }
+  },
+    
+  data() {
+    return {
+
+    };
+  },
+
+  methods: {
+    test() {
+      //console.log("SHINYYYY");
+      this.$emit('test');
+    }
+  },
+};
+</script>
 
 <style scoped>
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css";
