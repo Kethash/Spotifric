@@ -5,15 +5,21 @@
       <h4>compte</h4>
       <div class="input-group">
         <div class="input-box">
-          <input type="text" placeholder="Nom" class="nom" />
+          <input type="text" placeholder="nom" class="nom" />
+          <i class="fa fa-user icon"></i>
         </div>
         <div class="input-box">
-          <input type="text" placeholder="Prénom" class="nom" />
+          <input type="text" placeholder="Prenom" class="nom" />
+          <i class="fa fa-user icon"></i>
         </div>
       </div>
       <div class="input-group">
         <div class="input-box">
-          <input type="email" placeholder="adresse email" class="name" />
+          <input
+            type="email"
+            placeholder="adresse email"
+            class="name"
+          />
           <i class="fa fa-envelope icon"></i>
         </div>
       </div>
@@ -57,37 +63,27 @@
       </div>
       <div class="input-group">
         <div class="input-box">
-          <input type="tel" placeholder="CVC" maxlength="3" class="name" />
+          <input
+            type="tel"
+            placeholder="CVC"
+            maxlength="3"
+            class="name"
+          />
           <i class="fa fa-user icon"></i>
         </div>
       </div>
       <div class="input-box">
         <select>
-          <option>Janvier</option>
-          <option>Févrirer</option>
-          <option>Mars</option>
-          <option>Avril</option>
-          <option>Mai</option>
-          <option>Juin</option>
-          <option>Juillet</option>
-          <option>Aout</option>
-          <option>Septembre</option>
-          <option>Octobre</option>
-          <option>Novembre</option>
-          <option>Décembre</option>
+          <option>1 juin</option>
+          <option>2 juin</option>
+          <option>3 juin</option>
+          <option>4 juin</option>
         </select>
         <select>
           <option>2020</option>
           <option>2021</option>
           <option>2022</option>
           <option>2023</option>
-          <option>2024</option>
-          <option>2025</option>
-          <option>2026</option>
-          <option>2027</option>
-          <option>2028</option>
-          <option>2029</option>
-          <option>2030</option>
         </select>
       </div>
       <div class="input-group">
@@ -102,18 +98,20 @@
 <script>
 module.exports = {
   props: {
-    islogged: { type: Boolean },
+      islogged: { type: Boolean }
   },
-
+    
   data() {
-    return {};
+    return {
+
+    };
   },
 
   methods: {
     test() {
       //console.log("SHINYYYY");
-      this.$emit("test");
-    },
+      this.$emit('test');
+    }
   },
 };
 </script>
@@ -140,9 +138,8 @@ body {
   border-radius: 40px;
 }
 .wrapper h2 {
-  background-color: white;
-  border-radius: 20px;
-  color: #009578;
+  background-color: #fcfcfc;
+  color: #7ed321;
   font-size: 24px;
   padding: 10px;
   margin-bottom: 20px;
@@ -152,7 +149,7 @@ body {
 
 h4 {
   padding-bottom: 8px;
-  color: green;
+  color: #7ed321;
 }
 
 .input-group {
@@ -214,7 +211,7 @@ h4 {
 }
 
 .name:focus + .icon {
-  background-color: #009578;
+  background-color: #7ed321;
   color: #fff;
   border-right: 1px solid #7ed321;
   border: none;
@@ -257,7 +254,7 @@ h4 {
 }
 
 .radio:checked + label {
-  background-color: #007c64;
+  background-color: #7ed321;
   color: #fff;
   transition: 0.5s;
 }
@@ -284,10 +281,9 @@ h4 {
 
 button {
   width: 100%;
-  border-radius: 50px;
   background: transparent;
-  border: 1px solid black;
-  background: #007c64;
+  border: none;
+  background: #7ed321;
   color: #fff;
   padding: 15px;
   border-radius: 4px;
