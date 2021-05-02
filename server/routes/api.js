@@ -9,11 +9,14 @@ const bcrypt = require('bcrypt')
 const { Client } = require('pg');
 const { defaultMaxListeners } = require('stream');
 
+/* Replace client values by your login details */
+
+
 const client = new Client({
-  user: 'postgres',
-  host: 'localhost',
-  password: 'lolipop1',
-  database: 'projet'
+  user: '',
+  host: '',
+  password: '',
+  database: ''
 })
 
 client.connect();
