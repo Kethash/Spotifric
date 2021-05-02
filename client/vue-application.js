@@ -40,15 +40,7 @@ var app = new Vue({
     // Playlist par défaut pour tester
     exemple_playlist: 
       {
-        musiques : [{ title: "Random", music: "http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3", image: ""},
-      { title: "Random 2", music: "http://soundbible.com/grab.php?id=915&type=mp3", image: "" },
-      { title: "Rest", music: './components/mp3/Pheeno_Rest.mp3', image: "https://www.pokepedia.fr/images/thumb/c/cd/Rondoudou-RFVF.png/250px-Rondoudou-RFVF.png" },
-      { title: "Mirai Ticket", music: './components/mp3/MIRAI_TICKET.mp3', image: "" },
-      { title: "Astronomia", music: 'https://youtu.be/--cxZbnmmoc', image: "" },
-      { title: "Earth", music: 'https://youtu.be/w1cWzw_evtQ', image: "" },
-      { title: "Geoplex Daybreak", music: 'https://youtu.be/yz9mqIbMSGA', image: "" },
-      { title: "Evergreen", music: './components/mp3/Evergreen.mp3', image: "./ressources/images_playlist/emma.png" },
-    ]
+        musiques : []
   },
 
 
